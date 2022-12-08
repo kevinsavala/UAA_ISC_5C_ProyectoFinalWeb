@@ -1,0 +1,166 @@
+
+html, body, .capa{
+	height: 100%;
+}
+
+body{
+
+	background: url('../imagens/Tattoo.jpg'), 
+				url('../imagens/Tattoo.jpg'),
+				linear-gradient(50deg,#000000,#ffffff);
+	background-attachment: fixed; 
+	font-family: Helvetica, Arial, sans-serif;
+	overflow-x: hidden;
+}
+
+
+
+.img-logo{
+	height: 40px;
+	width: 132px;
+	display: block;
+	background: url('../imagens/cosas\ de\ tatuaje.webp') no-repeat;
+	background-size: contain;
+	color: transparent;
+}
+
+nav.navbar-transparente{
+	padding:15px 0px;
+	background: rgba(0, 0, 0, 0.6); /* deixa a barra de navegação transparente*/
+	border: none;
+}
+
+.navbar-brand{
+	padding:5px 15px;
+}
+
+.divisor{
+	width: 1px;
+	height: 16px;
+	background: white;
+	margin: 16px 10px;
+}
+
+/*Links do menu de navegação e do rodape*/
+.navbar-inverse .navbar-nav>li>a, footer .nav a{ /* Sobrescrevendo o stilo padrão do link do boostrap*/
+	color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, footer .nav a:hover{/* Sobrescrevendo o stilo padrão do link do boostrap*/
+	color: #9bf0e1;
+	background:none;
+}
+
+/* --Imagem de Capa-- */
+.capa{
+	display: table; /*deixando a capa centralizada*/
+	width: 100%;    /*deixando a capa centralizada*/
+
+}
+.texto-capa{
+	text-align: center;
+	color: white;
+	display: table-cell; 	/*deixando a capa centralizada*/
+	vertical-align:middle;  /*deixando a capa centralizada*/
+	
+}
+
+/*--Butões --*/
+.btn-custom{
+	color: white;
+	border-radius: 500px;
+	-webkit-border-radius: 500px; /*para funcionar em diferentes browsers*/
+	-moz-border-radius: 500px; 	 
+	padding:10px 35px;
+	margin: 0px 15px; 
+	text-transform:uppercase;  /*deixa as Letras Maiúscilas*/
+	transition: background 0.4s, color 0.4s; /*Atraso na mudança de cor ao passar o mouse - deixando-o suave*/
+
+}
+
+.btn-roxo{
+	background: #7c25f8;
+}
+.btn-roxo:hover{
+	background-color: #6207e3;
+	color:white;
+}
+
+.btn-branco{
+	border: 2px solid white;
+
+}
+.btn-branco:hover{
+	background-color: white;
+	color: black;
+}
+
+/*--- Serviços ---*/
+#servicos{
+	background: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.albuns{
+	padding: 10px 0px 10px 0px;
+}
+
+/*--- Recursos ---*/
+#recursos{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.ratacionar{
+	padding-left: 80px;
+	transform: rotate(30deg); /*--- da um efeito de ratação no iten que utilizar esta classe ---*/
+	-ms-transform: rotate(30deg); /*Para Funcionar no IE9*/
+	-webkit-transform: rotate(30deg); /*Para Funcionar no, Chrome, Safari, Opera ...*/
+	
+}
+
+
+footer{
+	background: #000;
+	padding: 50px 0px 20px 0px;	
+	position: relative;
+}
+
+/*Deixa os icons de rede social do rodape um ao lado do outro*/
+.item-rede-social{
+	float: right;
+}
+/*=====================Tipografia=======================*/
+h1{
+	font-size: 100px;
+	font-weight: 900px;
+	letter-spacing: -0.05em; /*deixando as Letras mais proximas*/
+	margin-bottom: 50px;
+}
+
+h2{
+	font-size: 50px;
+	font-weight: 700px;
+	letter-spacing: -0.04em; /*deixando as Letras mais proximas*/
+}
+
+h3{
+	font-size: 35px;
+	font-weight: 700px;
+	letter-spacing: -0.04em; /*deixando as Letras mais proximas*/
+}
+#rodape h4{
+	color:#919496; 
+	font-size: 12px;
+	text-transform: uppercase; /*deixa as Letras Todas Maiúsculas*/
+}
+
+
+#servicos h2, #servicos h3 {
+	color: #7c25f8;
+}
+
+#recursos h2, #recursos p, #recursos h3 {
+	color: white;
+}
