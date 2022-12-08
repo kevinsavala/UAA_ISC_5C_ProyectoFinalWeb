@@ -1,0 +1,343 @@
+body{
+    
+   background: url('/WixProyectoFinal/images/Tattoo.jpg'),
+}
+/* Menu en barra superior */
+.logo-ancla {
+    width: 28%;
+    padding-left: 70px;
+    padding-right: 30px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid rgba(250, 229, 211);
+    height: 45px;
+    text-decoration: none;
+}
+
+.opcion-menu {
+    font-weight: normal;
+    width: 100%;
+    padding-right: 10px;
+    text-decoration: none;
+    color: gray;
+    text-align: center;
+}
+
+.opcion-menu:hover {
+    color:black;
+    text-decoration: underline 2px;
+}
+/* ------------------------------------------------------------ */
+
+.menu-main a:hover {
+    background: rgba(0, 0, 0, .1);
+}
+
+.menu-main a {
+
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+/* Carrusel */
+* {
+    box-sizing:border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: center;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+    .prev, .next {
+        font-size: 11px
+    }
+}
+/* ------------------------------------------------------------ */
+
+i {
+
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Seleccion de iconos */
+
+.Img {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.Window {
+    padding: 25px;
+}
+
+footer{
+    background-color: #F2F2F2;
+}
+/* ------------------------------------------------------------ */
+
+.secc1 {
+    display: flex;
+}
+
+.secc2{
+    display: flex;
+}
+
+.greenBox {
+    background: rgb(238, 236, 236);
+    width: 15%;
+    height: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    border: 2px solid rgb(199, 197, 197); 
+    z-index: 3;
+}
+
+.greenBox:hover {
+    background-color: white;
+}
+
+.audioPlayer {
+    background-color: transparent;
+    font-weight: bold;
+    color: #444;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: all 1s ease;
+    box-shadow: .5rem .5rem 1rem #ccc,
+        -.5rem -.5rem 1rem #fff;
+}
+
+.audioPlayer:hover {
+    box-shadow: .5rem .5rem 1rem #fff,
+        -.5rem -.5rem 1rem #ccc;
+}
+
+.audioPlayer:active {
+    box-shadow: inset .5rem 1rem #fff,
+        inset -.5rem -.5rem 1rem #ccc;
+}
+
+.secc{
+    display: flex;
+}
+
+#art {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+footer{
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+}
+
+#Secc {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+}
+
+.container {
+    display: flex;
+    position: relative;
+    width: 33%;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(19, 226, 105);
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: black;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlayBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    background-color:teal;
+}
+
+.container:hover .overlayBottom {
+    height: 100%;
+}
+/* ------------------------------------------------------------ */
+
+/* Overlay Zoom */
+.overlayZoom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    background-color:mediumaquamarine;
+}
+
+.container:hover .overlayZoom {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+#redesSociales {
+    display: flex;
+    justify-content: center;
+}
+
+#imagenOneDrive {
+    display: flex;
+    justify-content: center;
+}
+
+table, th, td {
+    border: 2px double black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+/* tabla */
+.table {
+    display: flex;
+    justify-content: center;
+}
+
+/* ------------------------------------------ */
+
+/* acordeon */
+ /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: green;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-family: 'Permanent Marker', cursive;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: green;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: grey;
+    display: none;
+    overflow: hidden;
+} 
+/* ------------------------------------------- */
+
