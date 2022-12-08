@@ -26,10 +26,9 @@
                 asperiores?
             </p>
         </div>
-        <img src="images/car-header.png" alt="Car" />
+        <img src="images/car-header.png" alt="Car">
     </div>
-    </div>
-    </header>
+    
     <section class="catalog" id="catalog">
         <div class="content">
             <div class="title-wrapper-catalog">
@@ -227,6 +226,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>
