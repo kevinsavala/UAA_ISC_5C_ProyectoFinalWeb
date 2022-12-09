@@ -4,9 +4,16 @@
   <title> PAGO EN LINEA </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="css/estilos.css">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+<!-- Bootstrap -->
+  <link href="../../css/Extras.css" rel="stylesheet">
+  <link href="../../css/estilo.css" rel="stylesheet">
 </head>
 <body>
+    <?php
+        include_once('../../layout/menuprincipal.php');
+    ?>
 <!-- partial:index.partial.html -->
 <div class="wrapper" id="app">
     <div class="card-form">
@@ -24,7 +31,7 @@
                 <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" class="card-item__chip">
                 <div class="card-item__type">
                   <transition name="slide-fade-up">
-                    <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
+                    <img v-bind:src="'img/mastercard.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
                   </transition>
                 </div>
               </div>
