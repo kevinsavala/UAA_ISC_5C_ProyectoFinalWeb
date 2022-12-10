@@ -43,16 +43,25 @@
         }
 
     </style>
-</head>
+    </head>
+    <body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
-<body>
+    <?php
+        if(isset($_SESSION['logueado']) && $_SESSION['logueado']==1){
+            header("Location: index.php");
+            exit();
+        } else { 
+    ?>
+
     <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
         <div class="container">
 
             <!-- header -->
             <div class="navbar-header">
-
-
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
                     <span class="sr-only"></span>
                     <span class="icon-bar"></span>
@@ -60,9 +69,8 @@
                     <span class="icon-bar"></span>
 
                 </button>
-
                 <!-- logo-barra -->
-                <a href="index.html" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <span class="img-logo">Cosas de Tatuadores</span>
                 </a>
             </div>
@@ -71,22 +79,27 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="Tintas.php">Tintas</a></li>
-                    <li><a href="Agujas.php">Agujas</a></li>
-                    <li><a href="Maquinas.php">Maquinas</a></li>
+                    <li><a href="AcercaDe.php">Acerca de</a></li>
+                    <li><a href="Contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
-                    <li class="divisor" role="separator"></li>
-
                     <li><a href="tienda/Productos.php">Tienda</a></li>
+                    <li class="divisor" role="separator"></li>
+                    
                     <li><a href="loginForm.php">Inicio de sesion</a></li>
+                    <li><a href="signupForm.php">Registrarse</a></li>
+                    
                 </ul>
             </div>
 
-        </div><!-- /Container -->
-    </nav> <!-- /Nav -->
-    <br><br><br><br><br><br><br>
+        </div>
+    </nav>
+    <!-- /Nav -->
+    <?php }?>
 
-    <div class="container">
+   
+   
+   
+    <div class="container" style="margin-top:200px; margin-bottom:230px;">
         <div class="vertical-center">
             <form action="login.php" method="post" style="color:white">
                 <div class="row g-3 align-items-center">
@@ -109,40 +122,30 @@
                     </div>
                 </div>
 
-
-
-                <div class="row g-3 align-items-center">
-                    <div class="col-auto">
-                        <label for="contraConfirm" class="col-form-label">Confirmar contraseña</label>
-                    </div>
-                    <div class="col-auto">
-                        <input name="contraConfirm" type="password" id="contraConfirm" class="form-control textoBG" aria-describedby="passwordHelpInline">
-                    </div>
-                </div>
+                
 
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
                     <label class="form-check-label" for="exampleCheck1">Recordar usuario y contraseña</label>
                 </div>
-
+                
+                <div class="elem-group">
+                        <label for="captcha" style="color:purple">Por favor ingresa el texto del Captcha:</label>
+                        <label>captcha xd</label>
+                        <input type="text" id="captcha" name="captcha_challenge" style="color:black">
+                </div>
 
                 <div class="row g-3 align-items-center">
-                    <br><button type="submit" class="btn btn-primary">Submit</button>
+                    <br><button type="submit" class="btn btn-md btn-custom btn-roxo">Iniciar sesion</button>
                 </div>
 
-                <div class="elem-group">
-                        <label for="captcha">Please Enter the Captcha Text</label>
-                        <img src="captcha.php" alt="CAPTCHA" class="captcha-image"><i class="fas fa-redo refresh-captcha"></i>
-                        <br>
-                        <input type="text" id="captcha" name="captcha_challenge" pattern="[A-Z]{6}">
-                </div>
+                
             </form>
         </div>
     </div>
 
-
-    <br><br><br><br><br><br><br>
-
+    
+    
 
     <!-- Rodape -->
     <footer id="rodape">
@@ -185,19 +188,20 @@
                             </a>
                         </li>
                         <li class="item-rede-social">
-                            <a href="#" class="btn btn-primary">Intagram</a>
+                            <a href="#" class="btn btn-md btn-custom btn-roxo">Intagram</a>
+                            <br>
                         </li>
                         <li class="item-rede-social">
-                            <a href="#" class="btn btn-primary">Facebook</a>
+                            <a href="#" class="btn btn-md btn-custom btn-roxo">Facebook</a>
                         </li>
                     </ul>
                     <a href="" style="margin-right:10px" target="">
                         <img src="">
                     </a>
 
-                    <span>
+                    <span style="text-align:justify;">
                         <strong style="color: aliceblue"></strong>
-                        |<span>---</span> | &copy; 2022
+                        |<span >Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
                     </span>
                 </div>
 

@@ -101,91 +101,47 @@
     </nav>
     <!-- /Nav -->
     <?php }?>
-
-
-
-
-
-
-    <!-- capa -->
-    <div class="capa">
-        <div class="texto-capa">
-            <h1>Tatuajes Recomendados</h1>
-            <a href="Anime.php" class="btn btn-lg btn-custom btn-roxo">Anime</a>
-            <a href="Japones.php" class="btn btn-lg btn-custom btn-branco">Estilo Japones</a>
-
-        </div>
-    </div><!-- /capa -->
-
-    <!-- ====Conteudo==== -->
-    <!-- Seção de Serviços -->
-    <section id="servicos">
-        <div class="container">
-
-            <div class="row">
-                <!-- tatto -->
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="row albuns">
-                        <div class="col-md-6">
-                            <img src="imagens/Ray.jpg" class="img-responsive img-rounded">
-                        </div>
-
-
-                    </div><!-- /row 01 -->
-
-                </div>
-
-                <!-- Servicios -->
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h2>¿Quiénes somos?</h2>
-                    <p>
-                        Somos la mejor tienda de productos de tatuaje en Aguascalientes.Desde el 2015 esta tienda ha surtido a cientos de estudios de tatuaje en Aguascalientes, brindando los productos de mejor calidad a los mejores precios del mercado.
-                        <br>
-                        En Cosas de Tatuaje te aseguramos que estaras satisfecho con tu compra, y si no lo estas contamos con devolucion gratis.
-                        <br>
-                        Estamos celebrando nuestra apertura online! Utiliza el codigo APERTURACDT para obtener un descuento de 50 pesos en cualquiera de tus compras.
-                    </p>
-
-                </div><!-- /servicios -->
-
-            </div><!-- /row -->
-
-        </div> <!-- /Container -->
-    </section>
-
-    <!-- Sessão de Recursos -->
-    <section id="recursos">
-        <div class="container">
-            <div class="row">
-
-                <!-- Recursos-->
-                <div class="col-md-6">
-                    <h2>Nose que poner</h2>
-
-                    <h3>agregar...</h3>
-                    <p>
-                        ---
-                    </p>
-
-                    <h3>Extra</h3>
-                    <p>
-                        ----
-                    </p>
-
-                </div>
-
-            </div><!-- /row -->
-        </div><!-- /Container -->
-    </section>
-    <section id="seccion">
-        <a href="">
-            <button class="greenBox">
-                Subir
-            </button>
-        </a>
-    </section>
-
-    <!-- Rodape -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+   <!-- Rodape -->
     <footer id="rodape">
         <div class="container">
             <div class="row">
@@ -247,9 +203,5 @@
             </div><!-- /row -->
         </div> <!-- /Container -->
     </footer>
-
-
-
 </body>
-
 </html>
