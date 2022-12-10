@@ -56,7 +56,7 @@ function actualizarCarritoUI(){
         });
 
         precioTotal = `<p>Total: $${data.info.total}</p>`;
-        pagar ="<div class='pagar'><a href='http://localhost/cursophp/tienda/pago/pago.html'><button class='btnpagar'>PAGAR</button></div></a>";
+        pagar ="<div class='pagar'><a href='http://localhost/cursophp/github/UAA_ISC_5C_ProyectoFinalWeb/tienda/Pago/pago.php'><button class='btnpagar'>PAGAR</button></div></a>";
         tablaCont.innerHTML = precioTotal + html+ pagar;
 
         document.cookie = `items=${data.info.count}`;

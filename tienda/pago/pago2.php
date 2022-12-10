@@ -182,6 +182,9 @@
     
   </div>
 <!-- partial -->
+   <?php
+        include_once('../../layout/footer.php');
+    ?>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
 <script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script><script  src="js/java.js"></script>
 

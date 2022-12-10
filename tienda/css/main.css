@@ -63,14 +63,14 @@ nav ul li a{
     z-index: 1;
 }
 .flip-card-front{
-    background-image: linear-gradient(43deg, #6f04d9,#d9048e);
+    background-image: linear-gradient(315deg,black,grey);
 }
 .flip-card-front img{
     width: 220px;
     margin-top: 1rem;
 }
 .flip-card-back{
-    background-image: linear-gradient(315deg,#6f04d9,#8a045c);
+    background-image: linear-gradient(315deg,black,grey);
     color: white;
     transform: rotateY(180deg);
 }
@@ -129,9 +129,10 @@ nav ul li a{
     font-weight: bold;
 }
 .btn-remove{
+    color: aliceblue;
     border: 0;
     border-radius: 5px;
-    background: rgb(255, 157, 10);
+    background-color: black;
     cursor: pointer;
     padding: 10px;
 }
