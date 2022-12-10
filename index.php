@@ -41,15 +41,15 @@
       <!-- navbar -->
       <div class="collapse navbar-collapse" id="menu">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../WixProyectoFinal/index.php">Inicio</a></li>
-          <li><a href="/Tintas.php">Tintas</a></li>
-          <li><a href="../WixProyectoFinal/Agujas.php">Aguajas</a></li>
-          <li><a href="../WixProyectoFinal/Maquinas.php">Maquinas</a></li>
-          <li><a href="../WixProyectoFinal/Preguntas.php">Preguntas Frecuentes</a></li>
+          <li><a href="index.php">Inicio</a></li>
+          <li><a href="Tintas.php">Tintas</a></li>
+          <li><a href="Agujas.php">Agujas</a></li>
+          <li><a href="Maquinas.php">Maquinas</a></li>
+          <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
           <li class="divisor" role="separator"></li>
 
           <li><a href="tienda/Productos.php">Tienda</a></li>
-          <li><a href="">Inicio de sesion</a></li>
+          <li><a href="loginForm.php">Inicio de sesion</a></li>
         </ul>
       </div>
 
