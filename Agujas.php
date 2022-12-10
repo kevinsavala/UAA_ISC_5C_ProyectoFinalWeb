@@ -2,34 +2,65 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cosas de Tatuadores</title>
-    <link rel="icon" href="imagens/favicon.png">
+  <title>Cosas de Tatuadores</title>
+  <link rel="icon" href="">
 
-    <!-- Bootstrap -->
-    <link href="bootstrap/css/Extras.css" rel="stylesheet">
-    <link href="estilo.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+  <!-- Bootstrap -->
+  <link href="css/Extras.css" rel="stylesheet">
+  <link href="css/estilo.css" rel="stylesheet">
 </head>
 
 <body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  
+  <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
+    <div class="container">
 
+      <!-- header -->
+      <div class="navbar-header">
 
-    <div class="header-block">
-        <div class="text">
-            <h2>The perfect car for you</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
-                asperiores?
-            </p>
-        </div>
-        <img src="images/car-header.png" alt="Car" />
+      
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+
+        </button>
+
+        <!-- logo-barra -->
+        <a href="index.php" class="navbar-brand">
+          <span class="img-logo">Cosas de Tatuadores</span>
+        </a>
+      </div>
+
+      <!-- navbar -->
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.php">Inicio</a></li>
+          <li><a href="Tintas.php">Tintas</a></li>
+          <li><a href="Agujas.php">Agujas</a></li>
+          <li><a href="Maquinas.php">Maquinas</a></li>
+          <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
+          <li class="divisor" role="separator"></li>
+
+          <li><a href="tienda/Productos.php">Tienda</a></li>
+          <li><a href="loginForm.php">Inicio de sesion</a></li>
+        </ul>
+      </div>
+
     </div>
-    </div>
-    </header>
+  </nav>
+   <!-- /Nav -->
+    
+    
     <section class="catalog" id="catalog">
         <div class="content">
             <div class="title-wrapper-catalog">

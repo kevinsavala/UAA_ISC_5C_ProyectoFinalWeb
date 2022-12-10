@@ -15,7 +15,10 @@
 </head>
 
 <body>
-
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
   
   <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
     <div class="container">
@@ -33,7 +36,7 @@
         </button>
 
         <!-- logo-barra -->
-        <a href="index.html" class="navbar-brand">
+        <a href="index.php" class="navbar-brand">
           <span class="img-logo">Cosas de Tatuadores</span>
         </a>
       </div>
@@ -53,8 +56,13 @@
         </ul>
       </div>
 
-    </div><!-- /Container -->
-  </nav> <!-- /Nav -->
+    </div>
+  </nav>
+   <!-- /Nav -->
+
+
+
+
 
   <!-- capa -->
   <div class="capa">
@@ -197,10 +205,7 @@
   </footer>
 
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
