@@ -1,3 +1,51 @@
+<?php
+    session_start();
+?>
+
+<html lang="en">
+
+<head>
+    
+    <title>Login-registro, cookies, captcha, sql</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link" href="loginForm.php">Login</a>
+                        <a class="nav-link" href="signupForm.php">Signup</a>
+                        <a class="nav-link disabled">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <h1 style="color:red;text-align:center">Tu cuenta está bloqueada!</h1>
+    <h4 style="text-align:center">Para recuperarla, ingresa tu nombre de usuario:</h4>
+    <h4 style="text-align:center">Te enviaremos un correo electronico con una contraseña nueva.</h4>
+    <div class="container">
+        <form action="recover.php" method="post">
+        <p>Usuario:<input type="text" name="username"></p>
+        <input type="submit" value="Enviar correo.">
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
 <?php session_start();
 ?>
 
@@ -8,7 +56,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        .contanier{
+            width: 400px;
+            clear:both;
+        }
+        .container input{
+            width: 100%;
+            clear:both;
+        }
+    </style>
     <title>Cosas de Tatuadores</title>
     <link rel="icon" href="imagens/cosas%20de%20tatuaje.webp">
 
@@ -115,20 +174,15 @@
    <br>
    <br>
    <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+   <h1 style="color:red;text-align:center">Tu cuenta está bloqueada!</h1>
+    <h4 style="text-align:center">Para recuperarla, ingresa tu nombre de usuario:</h4>
+    <h4 style="text-align:center">Te enviaremos un correo electronico con una contraseña nueva.</h4>
+    <div class="container">
+        <form action="recover.php" method="post">
+        <p>Usuario:<input type="text" name="username"></p>
+        <input type="submit" value="Enviar correo.">
+        </form>
+    </div>
    <br>
    <br>
    <br>

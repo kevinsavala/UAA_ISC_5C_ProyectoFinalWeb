@@ -49,6 +49,7 @@
                     <li><a href="AcercaDe.php">Acerca de</a></li>
                     <li><a href="Contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
+                    <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
                     <li><p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p></li>
                     <li style="margin-left:60px;" class="divisor" role="separator"></li>
@@ -226,7 +227,7 @@
                             </a>
                         </li>
                         <li class="item-rede-social">
-                            <a href="#" class="btn btn-md btn-custom btn-roxo">Intagram</a>
+                            <a href="provisionalLogin.php" class="btn btn-md btn-custom btn-roxo">Test Login</a>
                             <br>
                         </li>
                         <li class="item-rede-social">

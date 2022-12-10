@@ -28,7 +28,7 @@ function generatePassword($length=5){
     return $randomString;
 }
 function updatePassword($newPw,$user){
-    $con = new mysqli("localhost:33065","root","","usuariosavance"); // Conectar a la BD
+    $con = new mysqli("localhost","482482","UAAisc5C","482482"); // Conectar a la BD
     $sql = "update usuarios set password=aes_encrypt('$newPw','prueba') where cuenta='$user';";
     $query = $con->query($sql); // Ejecutar la consulta SQL
     $sql = "update usuarios set bloqueada=0 where cuenta='$user';";
