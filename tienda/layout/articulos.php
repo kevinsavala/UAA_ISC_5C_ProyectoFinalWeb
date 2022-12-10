@@ -6,13 +6,13 @@
             </div>
                 <div class="flip-card-back">
             <input type="hidden" id="id" value="<?php echo $item['id'];  ?>">
-            <h1><?php echo $item["nombre"] ?></h1>
-            <h6><?php echo $item["descripcion"] ?></h6>
-            <h6>Existencia: <?php echo $item["existencia"] ?></h6>
-            <h6><del><?php echo $item["precio"] ?></del></h6><?php   
+            <h2><?php echo $item["nombre"] ?></h2>
+            <h5><?php echo $item["descripcion"] ?></h5>
+            <h5>Existencia: <?php echo $item["existencia"] ?></h5>
+            <h5><del><?php echo $item["precio"] ?></del></h5><?php   
                     $item['precio']-=100;
                     ?>
-                    <h6>$<?php echo $item["precio"] ?></h6>
+                    <h5>$<?php echo $item["precio"] ?></h5>
                     <div class="botones">
             <button type="submit" class="btn btn-dark btn-add" name="agregar">Agregar</button>
                 </div>

@@ -1,9 +1,9 @@
 
-<nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
+<nav class=" navbar-inverse navbar-transparente">
     <div class="container">
 
       <!-- header -->
-      <div class="navbar-header">
+      <div class="">
 
       
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
@@ -21,8 +21,8 @@
       </div>
 
       <!-- navbar -->
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="nav navbar-nav navbar-right">
+      <div class="" id="menu">
+        <ul class=" ">
           <li><a href="../WixProyectoFinal/index.php">Inicio</a></li>
           <li><a href="/Tintas.php">Tintas</a></li>
           <li><a href="../WixProyectoFinal/Agujas.php">Aguajas</a></li>
@@ -30,7 +30,7 @@
           <li><a href="../WixProyectoFinal/Preguntas.php">Preguntas Frecuentes</a></li>
           <li class="divisor" role="separator"></li>
 
-          <li><a href="../tienda/Productos.php">Carrito</a></li>
+          <li><a href="../tienda/Productos.php">Tienda</a></li>
           <li><a href="">Inicio de sesion</a></li>
         </ul>
       </div>

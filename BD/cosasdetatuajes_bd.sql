@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-12-2022 a las 06:12:33
+-- Tiempo de generación: 10-12-2022 a las 07:01:12
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 7.4.33
 
@@ -52,7 +52,7 @@ INSERT INTO `productos` (`id`, `nombre`, `categoria`, `descripcion`, `existencia
 (8, 'Nuclear Blacklight', 'Tintas', 'Colores nucleares de mamá por Millennium Colorworks Inc.', 4, 7000, 'nuclear.jpg'),
 (9, 'RUST', 'Tintas', 'Fabricado con orgullo en los EE. UU. Las tintas World Famous Inks están respaldadas por los artistas más buscados de todo el mundo', 8, 3000, 'rust.jpg'),
 (10, 'Robin’s Egg', 'Tintas', 'Una de las mejores tintas para tatuajes', 6, 3150, 'robin.jpg'),
-(11, 'Mast P20 Permanent Makeup', 'Maquinas', 'Maquina para tatuar varios colores', 5, 3500, 'mast.jpeg'),
+(11, 'Mast P20 ', 'Maquinas', 'Maquina para tatuar varios colores', 5, 3500, 'mast.jpeg'),
 (12, 'Estrellas', 'Maquinas', 'Máquina de bobina para tatuar básica de 10 vueltas, se puede utilizar para línea sombra y relleno.', 8, 4000, 'estrellas.jpg');
 
 --

@@ -1,4 +1,5 @@
-
+<link href="../css/Extras.css" rel="stylesheet">
+  <link href="../css/estilo.css" rel="stylesheet">
   <!-- Rodape -->
   <footer id="rodape">
     <div class="container">
