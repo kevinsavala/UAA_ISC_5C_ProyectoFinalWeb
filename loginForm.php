@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Cosas de Tatuadores</title>
-    <link rel="icon" href="">
+    <link rel="icon" href="imagens/cosas%20de%20tatuaje.webp">
 
     <!-- Bootstrap -->
     <link href="css/Extras.css" rel="stylesheet">
@@ -102,12 +102,13 @@
     <div class="container" style="margin-top:200px; margin-bottom:230px;">
         <div class="vertical-center">
             <form action="login.php" method="post" style="color:white">
+               <input type="hidden" name="login" value="1">
                 <div class="row g-3 align-items-center">
                     <div class="col-auto">
                         <label for="usuario" class="col-form-label">Usuario</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="usuario" class="form-control textoBG" aria-describedby="passwordHelpInline">
+                        <input type="text" id="usuario" class="form-control textoBG" name="username">
                     </div>
                 </div>
 
@@ -118,7 +119,7 @@
                         <label for="contra" class="col-form-label">Contraseña</label>
                     </div>
                     <div class="col-auto">
-                        <input name="contra" type="password" id="contra" class="form-control textoBG" aria-describedby="passwordHelpInline">
+                        <input name="password" type="password" id="contra" class="form-control textoBG" aria-describedby="passwordHelpInline">
                     </div>
                 </div>
 
@@ -129,8 +130,8 @@
                     <label class="form-check-label" for="exampleCheck1">Recordar usuario y contraseña</label>
                 </div>
                 
-                <div class="elem-group">
-                        <label for="captcha" style="color:purple">Por favor ingresa el texto del Captcha:</label>
+                <div class="elem-group" style="margin-top:10px;">
+                        <label for="captcha" style="color:white">Por favor ingresa el texto del Captcha:</label>
                         <label>captcha xd</label>
                         <input type="text" id="captcha" name="captcha_challenge" style="color:black">
                 </div>
@@ -188,7 +189,7 @@
                             </a>
                         </li>
                         <li class="item-rede-social">
-                            <a href="#" class="btn btn-md btn-custom btn-roxo">Intagram</a>
+                            <a href="#" class="btn btn-md btn-custom btn-roxo">Instagram</a>
                             <br>
                         </li>
                         <li class="item-rede-social">
