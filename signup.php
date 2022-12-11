@@ -17,7 +17,7 @@
     exit();
     
     function insert($nombre,$email,$user,$pass){
-    $con = new mysqli("localhost","482482","UAAisc5C","482482"); // Conectar a la BD
+    $con = new mysqli("localhost","id19993614_admin","CR/#+fJer~?aDEk6","id19993614_482482"); // Conectar a la BD
     $sql = "insert into usuarios values (DEFAULT, '$nombre','$email','$user', aes_encrypt('$pass','prueba'),0);"; // Consulta SQL
     $query = $con->query($sql); // Ejecutar la consulta SQL
     }

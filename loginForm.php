@@ -108,7 +108,7 @@
                         <label for="usuario" class="col-form-label">Usuario</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="usuario" class="form-control textoBG" name="username">
+                        <input type="text" id="usuario" class="form-control textoBG" name="username"  value="<?php if(isset($_COOKIE["username"])){echo $_COOKIE["username"];} ?>">
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@
                         <label for="contra" class="col-form-label">Contraseña</label>
                     </div>
                     <div class="col-auto">
-                        <input name="password" type="password" id="contra" class="form-control textoBG" aria-describedby="passwordHelpInline">
+                        <input name="password" type="password" id="contra" class="form-control textoBG" aria-describedby="passwordHelpInline"  value="<?php if(isset($_COOKIE["password"])){echo $_COOKIE["password"];} ?>">
                     </div>
                 </div>
 
@@ -139,7 +139,7 @@
                 <div class="row g-3 align-items-center">
                     <br><button type="submit" class="btn btn-md btn-custom btn-roxo">Iniciar sesion</button>
                 </div>
-
+                <p style="color:red;"><?php if(isset($_SESSION['intentos']) && $_SESSION['intentos']>0){?>Contraseña erronea. INTENTOS: <?php  echo $_SESSION['intentos'];}?>.</p>
                 
             </form>
         </div>

@@ -1,9 +1,9 @@
 <?php
     session_start();
     $servidor = 'localhost';
-    $cuenta = '482482';
-    $password = 'UAAisc5C';
-    $bd = '482482';
+    $cuenta = 'id19993614_admin';
+    $password = 'CR/#+fJer~?aDEk6';
+    $bd = 'id19993614_482482';
     if(!isset($_SESSION['intentos'])){$_SESSION['intentos']=0;}
     if(!isset($_SESSION['lastuser'])){$_SESSION['lastuser']="";}
     if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])){
@@ -21,7 +21,9 @@
         //BUSCAR EL USERNAME EN LA BASE DE DATOS
         if(usernameExists($usuario)){
             //USUARIO EXISTE, COMPARAR CONTRASEÑA CHECAR BLOQUEO
-            if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena)){
+            if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && mustChangePw($usuario)){
+                   
+            }else if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena)){
                 //INICIAR SESION
                 $_SESSION['logueado'] = "1";
                 $_SESSION['user'] = $usuario;
@@ -57,7 +59,7 @@
 
     //FUNCIONES
     function consult($argumento){
-        $con = new mysqli("localhost","482482","UAAisc5C","482482"); // Conectar a la BD
+        $con = new mysqli("localhost","id19993614_admin","CR/#+fJer~?aDEk6","id19993614_482482"); // Conectar a la BD
         $sql = $argumento; // Consulta SQL
         $query = $con->query($sql); // Ejecutar la consulta SQL
         $data = array(); // Array donde vamos a guardar los datos
@@ -67,7 +69,7 @@
         return $data;
     }
     function consultNoReturn($argumento){
-        $con = new mysqli("localhost","482482","UAAisc5C","482482"); // Conectar a la BD
+        $con = new mysqli("localhost","id19993614_admin","CR/#+fJer~?aDEk6","id19993614_482482"); // Conectar a la BD
         $sql = $argumento; // Consulta SQL
         $query = $con->query($sql); // Ejecutar la consulta SQL
     }
