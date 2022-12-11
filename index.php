@@ -161,17 +161,13 @@
 
                 <!-- Recursos-->
                 <div class="col-md-6">
-                    <h2>Nose que poner</h2>
+                    <h2>Body Art</h2>
 
-                    <h3>agregar...</h3>
                     <p>
-                        ---
+                    El body art es una forma de comunicación, un lenguaje visual donde el tatuaje es un medio de expresión y también de formación de nuestra subjetividad; ya sea como un puente de comunicación o una forma de identidad, los tatuajes hoy en día son formas de marcar en nosotros una idea o un sentimiento a través del arte y la piel.
                     </p>
 
-                    <h3>Extra</h3>
-                    <p>
-                        ----
-                    </p>
+                    
 
                 </div>
 
