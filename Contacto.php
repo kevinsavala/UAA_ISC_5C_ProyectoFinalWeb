@@ -108,35 +108,39 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<section class="contacto" style="background-color:rgb(255,255,255,.4); color: #7c25f8;padding:100px;">
+   <main class="px-5 text-light">
+            <form class="row g-3" action="correo1.php" method="post">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Correo Electronico</label>
+                    <input type="email" class="form-control" id="inputEmail4" name="emaill">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputText44" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="inputText4" name="nombrecorreo">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Razón de contacto</label>
+                    <select id="inputState" class="form-select">
+                        <option selected="">Choose...</option>
+                        <option>Sugerencia</option>
+                        <option>Queja</option>
+                        <option>Problema Pagos</option>
+                        <option>Cuenta/Inicio de seción</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="inputTextArea" class="form-label">Informacion adicional</label>
+                    <textarea class="form-control form-control-lg" id="inputTextArea" placeholder="Danos mas detalles para poder atenderte lo mejor posible."></textarea>
+                </div>
+
+                <div class="col-12" style="align-content:center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+
+        </main>
+        </section>
 <br>
 <br>
 <br>
