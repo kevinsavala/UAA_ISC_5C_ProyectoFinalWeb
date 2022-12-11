@@ -103,46 +103,58 @@
     <!-- /Nav -->
     <?php }?>
    
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+   
+  <!-- capa -->
+  <div class="capa">
+    <div class="texto-capa">
+      <h1>¿Quiénes somos?</h1>
+       <p style="text-align: center;font-size: 20px;text-align: justify-all">
+            Somos una empresa que lleva años en el mercado, sus creadores y fundadores Darien, Kevin, Uribarrien, Daniel,Ana y Erick, tuvieron la visión de distribuir y vender subministros para tatuadores
+            <br>
+            lejos solo de distribuir subministros tenemos una tienda  en fisico  para  realizar tatuajes de diferentes estilos, ya sea tradicional japones  anime, neotradicional etc 
+            <br>
+           se ha convertido en una de las tiendas mas completas y con mejor pocisión del mercado en tan poco tiempo  
+          </p>
+
+    </div>
+  </div><!-- /capa -->
+
+  
+  <section id="servicos" style="background-color:rgb(255,255,255,.5)">
+    <div class="container">
+
+      <div class="row">
+        <!-- tatto -->
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="row albuns">
+            <div class="col-md-6">
+              <img src="imagens/IMG_20221130_122148.jpg" class="img-responsive img-rounded">
+            </div>
+
+
+          </div><!-- /row 01 -->
+
+        </div>
+
+        <!-- Servicios -->
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <h2>Productos de máxima calidad y con excelente servició al cliente </h2>
+          <p>
+            para poder comprar todo se hace a través de nuestra pagina oficial, que cuenta con su plataforma de ventas donde permitira a los clientes 
+            realizar sus pedidos
+            <br>
+           Cuenta con un área de revisión y empaque para la salida de todos los pedidos que se realizan a diario, el cual es monitoreado y supervisado para que el producto funcione correctamente, el empaque y/o embalaje sea el adecuado para que lleguen de la mejor manera los productos e insumos que nos pide el cliente.
+            <br>
+            Todos nuestros productos son completamente originales, ya que trabajamos directamente con las marcas para su comodidad y que esten seguros de lo que estan recibiendo si tienen mas dudas pueden contactarse con nosotros  
+          </p>
+
+        </div><!-- /servicios -->
+
+      </div><!-- /row -->
+
+    </div> <!-- /Container -->
+  </section>
+
    
    <!-- Rodape -->
     <footer id="rodape">
