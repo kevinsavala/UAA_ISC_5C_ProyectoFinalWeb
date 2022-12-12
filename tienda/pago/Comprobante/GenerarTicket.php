@@ -2,10 +2,10 @@
 	
 	session_start();
 	
-	$servidor='localhost';
- 	$cuenta='root';
- 	$password='';
- 	$bd='CosasDeTatuajes_BD';
+	$servidor = 'localhost';
+    $cuenta = 'id19993614_admin';
+    $password = 'CR/#+fJer~?aDEk6';
+    $bd = 'id19993614_482482';
 	
 	$conexion = new mysqli($servidor,$cuenta,$password,$bd);
 	

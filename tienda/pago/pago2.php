@@ -166,11 +166,10 @@
             </div>
           </div>
         </div>
-        <!--
-				Para que funcione el ticket se necesita poner estas variables en el carrito
+        <?php
 				$_SESSION['Producto']=[1,3,6,9];
 				$_SESSION['Cantidad']=[5,7,3,9]; 
-        -->
+        ?>
         <a href="Comprobante/GenerarTicket.php">
         <button class="card-form__button">
           PAGAR

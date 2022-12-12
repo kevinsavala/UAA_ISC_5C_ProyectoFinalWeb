@@ -46,7 +46,9 @@
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-                    <li><p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p></li>
+                    <li>
+                        <p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p>
+                    </li>
                     <li style="margin-left:60px;" class="divisor" role="separator"></li>
                     <li><a href="logout.php">Cerrar sesión</a></li>
                 </ul>
@@ -88,7 +90,7 @@
                     <li class="divisor" role="separator"></li>
                     <li><a href="loginForm.php">Inicio de sesion</a></li>
                     <li><a href="signupForm.php">Registrarse</a></li>
-                    
+
                 </ul>
             </div>
 
@@ -132,8 +134,7 @@
                         <br>
                         En Cosas de Tatuaje te aseguramos que estaras satisfecho con tu compra, y si no lo estas contamos con devolucion gratis.
                         <br>
-                        Estamos celebrando nuestra apertura online! Utiliza el codigo APERTURACDT para obtener un descuento de 50 pesos en cualquiera de tus compras.
-                    </p>
+                        Estamos celebrando nuestra apertura online! </p><p style="color: purple;font-weight:bold;font-style:italic;background-color:rgb(0,0,0,0.1);">Utiliza el codigo APERTURACDT para obtener un descuento de 50 pesos en cualquiera de tus compras.</p>
 
                 </div><!-- /servicios -->
 
@@ -142,37 +143,22 @@
         </div> <!-- /Container -->
     </section>
 
-    <!-- Sessão de Recursos -->
-    <section id="recursos">
-        <div class="container">
-            <div class="row">
-
-                <!-- Recursos-->
-                <div class="col-md-6">
-                    <h2>Tips:</h2>
-
-                    <h3>Primero...</h3>
-                    <p>
-                        ---
-                    </p>
-
-                    <h3>Segundo...</h3>
-                    <p>
-                        ----
-                    </p>
-
-                </div>
-
-            </div><!-- /row -->
-        </div><!-- /Container -->
-    </section>
-    <section id="seccion">
-        <a href="">
-            <button class="greenBox">
-                Subir
-            </button>
-        </a>
-    </section>
+    <div class="card text-center" style="background-color:white; margin-top:60px; margin-bottom:60px;">
+        <div class="card-header" style="color:black">
+            <h3 style="font-weight:bold; font-style:italic">SUSCRIBETE!</h3>
+        </div>
+        <div class="card-body">
+            <form action="enviarCupon.php" method="post">
+                <h5 class="card-title" style="color:black">Ingresa tu correo electrónico para recibir las últimas ofertas y noticias de Cosas de Tatuajes!</h5>
+                <input type="email" class="form-control" style="text-align:center;" name="email">
+                <button type="submit" class="btn btn-md btn-custom btn-roxo">Suscribirme</button>
+            </form>
+            
+        </div>
+        <div class="card-footer text-muted">
+            Recibe un cupón gratis para tu primera compra! 
+        </div>
+    </div>
 
     <!-- Rodape -->
     <footer id="rodape">
@@ -228,7 +214,7 @@
 
                     <span style="text-align:justify;">
                         <strong style="color: aliceblue"></strong>
-                        |<span >Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
+                        |<span>Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
                     </span>
                 </div>
 

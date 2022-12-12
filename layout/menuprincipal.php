@@ -21,7 +21,7 @@ session_start();
         </button>
 
         <!-- logo-barra -->
-        <a href="../index.php" class="navbar-brand">
+        <a href="https://cosasdetatuaje.000webhostapp.com/index.php" class="navbar-brand">
           <span class="img-logo">Cosas de Tatuadores</span>
         </a>
       </div>
@@ -29,7 +29,7 @@ session_start();
       <!-- navbar -->
       <div class="" id="menu">
         <ul class=" ">
-          <li><a href="../index.php">Inicio</a></li>
+          <li><a href="https://cosasdetatuaje.000webhostapp.com/index.php">Inicio</a></li>
                     <li><a href="../Acercade.php">Acerca de</a></li>
                     <li><a href="../contacto.php">Contacto</a></li>
                     <li><a href="../Preguntas.php">Preguntas Frecuentes</a></li>
@@ -70,7 +70,7 @@ session_start();
       <!-- navbar -->
       <div class="" id="menu">
         <ul class=" ">
-          <li><a href="../index.php">Inicio</a></li>
+          <li><a href="https://cosasdetatuaje.000webhostapp.com/index.php">Inicio</a></li>
                     <li><a href="../Acercade.php">Acerca de</a></li>
                     <li><a href="../contacto.php">Contacto</a></li>
                     <li><a href="../Preguntas.php">Preguntas Frecuentes</a></li>
