@@ -33,12 +33,11 @@ function mostrar($carrito){
     $fullItems = [];
     $total = 0;
     $totalItems = 0;
-    foreach($itemsCarrito as $itemCarrito){
-        $httpRequest = file_get_contents('http://localhost/cursophp/tienda/api/productos/api-productos.php?get-item=' . $itemCarrito['id']);
+    fforeach($itemsCarrito as $itemCarrito){
+        $httpRequest = file_get_contents('https://cosasdetatuaje.000webhostapp.com/tienda/api/productos/api-productos.php?get-item=' . $itemCarrito['id']);
         $itemProducto = json_decode($httpRequest, 1)['item'];
         $itemProducto['cantidad'] = $itemCarrito['cantidad'];
         $itemProducto['subtotal'] = $itemProducto['cantidad'] * $itemProducto['precio'];
-
         $total += $itemProducto['subtotal'];
         $totalItems += $itemProducto['cantidad'];
 

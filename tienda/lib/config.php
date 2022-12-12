@@ -1,9 +1,9 @@
 <?php
 
 define('HOST', 'localhost');
-define('DB', 'cosasdetatuajes_bd');
-define('USER', 'root');
-define('PASSWORD', '');
+define('DB', 'id19993614_482482');
+define('USER', 'id19993614_admin');
+define('PASSWORD', 'CR/#+fJer~?aDEk6');
 
 
 ?>

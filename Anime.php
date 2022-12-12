@@ -6,12 +6,13 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cosas de Tatuadores</title>
+    <title>Cosas de Tatuajes | Anime</title>
     <link rel="icon" href="imagens/cosas%20de%20tatuaje.webp">
-
+    <link rel="stylesheet" href="css/Gallery.css">
     <!-- Bootstrap -->
     <link href="css/Extras.css" rel="stylesheet">
     <link href="css/estilo.css" rel="stylesheet">
@@ -46,12 +47,14 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="AcercaDe.php">Acerca de</a></li>
-                    <li><a href="Contacto.php">Contacto</a></li>
+                    <li><a href="Acercade.php">Acerca de</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-                    <li><p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p></li>
+                    <li>
+                        <p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p>
+                    </li>
                     <li style="margin-left:60px;" class="divisor" role="separator"></li>
                     <li><a href="logout.php">Cerrar sesión</a></li>
                 </ul>
@@ -86,15 +89,15 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="AcercaDe.php">Acerca de</a></li>
-                    <li><a href="Contacto.php">Contacto</a></li>
+                    <li><a href="Acercade.php">Acerca de</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-                    
+
                     <li><a href="loginForm.php">Inicio de sesion</a></li>
                     <li><a href="signupForm.php">Registrarse</a></li>
-                    
+
                 </ul>
             </div>
 
@@ -102,49 +105,82 @@
     </nav>
     <!-- /Nav -->
     <?php }?>
-   
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   
-   <!-- Rodape -->
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="galeria">
+        <h1>Galeria De Tatuajes Estilo Anime</h1>
+        <div class="linea"></div>
+        <div class="contenedor-imagenes">
+            <div class="imagen">
+                <img src="imagens/Levi Ackerman Tatto.jpg" alt="">
+                <div class="overlay">
+                    <h2>Levi Ackerman</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (3).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (4).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (5).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (6).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (7).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (8).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (9).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (10).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscriberte</h2>
+                </div>
+            </div>
+            <!-- <div class="imagen">
+                <img src="img/1 (2).jpg" alt="">
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Rodape -->
     <footer id="rodape">
         <div class="container">
             <div class="row">
@@ -198,7 +234,7 @@
 
                     <span style="text-align:justify;">
                         <strong style="color: aliceblue"></strong>
-                        |<span >Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
+                        |<span>Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
                     </span>
                 </div>
 
@@ -207,4 +243,6 @@
         </div> <!-- /Container -->
     </footer>
 </body>
+
 </html>
+>>>>>>> master

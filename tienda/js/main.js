@@ -30,7 +30,7 @@ bCarrito.addEventListener('click', event =>{
 });
 
 function actualizarCarritoUI(){
-    fetch('http://localhost/cursophp/tienda/api/carrito/api-carrito.php?action=mostrar')
+    fetch('https://cosasdetatuaje.000webhostapp.com/tienda/api/carrito/api-carrito.php?action=mostrar')
     .then(response => response.json())
     .then(data => {
         console.log(data);
@@ -56,7 +56,7 @@ function actualizarCarritoUI(){
         });
 
         precioTotal = `<p>Total: $${data.info.total}</p>`;
-        pagar ="<div class='pagar'><a href='http://localhost/cursophp/github/UAA_ISC_5C_ProyectoFinalWeb/tienda/Pago/pago.php'><button class='btnpagar'>PAGAR</button></div></a>";
+        pagar ="<div class='pagar'><a href='https://cosasdetatuaje.000webhostapp.com/tienda/pago/pago.php'><button class='btnpagar'>PAGAR</button></div></a>";
         tablaCont.innerHTML = precioTotal + html+ pagar;
 
         document.cookie = `items=${data.info.count}`;
@@ -84,7 +84,7 @@ botones.forEach(boton =>{
 });
 
 function removeItemFromCarrito(id){
-    fetch('http://localhost/cursophp/tienda/api/carrito/api-carrito.php?action=remove&id=' + id)
+    fetch('https://cosasdetatuaje.000webhostapp.com/tienda/api/carrito/api-carrito.php?action=remove&id=' + id)
     .then(res => res.json())
     .then(data =>{
         console.log(data.status);
@@ -93,7 +93,7 @@ function removeItemFromCarrito(id){
 }
 
 function addItemToCarrito(id){
-    fetch('http://localhost/cursophp/tienda/api/carrito/api-carrito.php?action=add&id=' + id)
+    fetch('https://cosasdetatuaje.000webhostapp.com/tienda/api/carrito/api-carrito.php?action=add&id=' + id)
     .then(res => res.json())
     .then(data =>{
         console.log(data.status);

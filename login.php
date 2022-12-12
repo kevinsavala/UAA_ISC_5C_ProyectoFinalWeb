@@ -22,7 +22,13 @@
         if(usernameExists($usuario)){
             //USUARIO EXISTE, COMPARAR CONTRASEÑA CHECAR BLOQUEO
             if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && mustChangePw($usuario)){
-                   
+                $_SESSION['logueado'] = "1";
+                $_SESSION['user'] = $usuario;
+                $_SESSION['nombre'] = getName($usuario);
+                $_SESSION['intentoLog'] = "0";
+                $_SESSION['intentos']=0;
+                header("Location: newPassword.php");
+                exit();   
             }else if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena)){
                 //INICIAR SESION
                 $_SESSION['logueado'] = "1";
@@ -107,6 +113,15 @@ function checkForBlock($user){
 }
 function blockUser($user){
     consultNoReturn("update usuarios set bloqueada=1 where cuenta='$user'");
+}
+
+function mustChangePw($user){
+    $data = consult("select changePassword from usuarios where cuenta='$user';");
+    if($data[0][0] == 1){
+        return true;
+    } else {
+        return false;
+    }
 }
                       
 ?>

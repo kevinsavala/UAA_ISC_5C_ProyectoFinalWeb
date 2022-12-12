@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,7 @@
 
     <main>
         <?php
-            $response = json_decode(file_get_contents('http://localhost/cursophp/tienda/api/productos/api-productos.php?categoria=Maquinas'), true); ?>
+            $response = json_decode(file_get_contents('https://cosasdetatuaje.000webhostapp.com/tienda/api/productos/api-productos.php?categoria=Maquinas'), true); ?>
         <div class="row"> <?php
             if($response['statuscode'] == 200){
                 foreach($response['items'] as $item){
@@ -30,7 +33,7 @@
             }else{
                 // mostrar error
             }
-            $response = json_decode(file_get_contents('http://localhost/cursophp/tienda/api/productos/api-productos.php?categoria=Tintas'), true); ?>
+            $response = json_decode(file_get_contents('https://cosasdetatuaje.000webhostapp.com/tienda/api/productos/api-productos.php?categoria=Tintas'), true); ?>
         <div class="row"> <?php
             if($response['statuscode'] == 200){
                 foreach($response['items'] as $item){

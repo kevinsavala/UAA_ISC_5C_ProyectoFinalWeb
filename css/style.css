@@ -1,7 +1,7 @@
-/* font importing */
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-/* reseting css rules */
+
 * {
   margin: 0px;
   padding: 0px;
@@ -11,9 +11,8 @@
 }
 
 :root {
-  --orange: #f78b00;
-  --blue: #00285f;
-  --gray: #ededed;
+  --blue: #0aff8d;
+  --gray: #000000;
 }
 
 html,
@@ -23,9 +22,8 @@ body {
 }
 
 header {
-  width: 100%;
+  width: 50%;
   height: 500px;
-  background: var(--orange);
 }
 
 .content {
@@ -37,57 +35,6 @@ header {
   padding: 10px;
 }
 
-nav {
-  width: 100%;
-  height: 125px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.brand {
-  font-size: 24px;
-  color: var(--blue);
-  cursor: pointer;
-}
-
-nav ul {
-  display: flex;
-  flex-direction: row;
-}
-
-nav ul li {
-  list-style: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-nav ul li a {
-  color: var(--blue);
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  color: #00285f83;
-}
-
-nav ul button {
-  border: 1px solid var(--blue);
-  background: transparent;
-  padding: 8px 40px;
-  cursor: pointer;
-  margin-left: 30px;
-  color: var(--blue);
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-nav ul button:hover {
-  transition: background, color 0.6s;
-  background: var(--blue);
-  color: white;
-}
 
 .content .header-block {
   max-width: 1000px;
@@ -118,14 +65,14 @@ nav ul button:hover {
 
 .header-block .text h2 {
   color: white;
-  margin-bottom: 20px;
+  
   text-align: right;
   transform: translateX(-20px);
   transition: transform 0.5s;
 }
 
 .header-block .text p {
-  max-width: 280px;
+ 
   color: white;
   text-align: right;
   transform: translateX(-20px);
@@ -241,6 +188,7 @@ section .card-item {
   color: var(--blue);
 }
 
+
 /* About */
 
 .about {
@@ -291,13 +239,6 @@ section .card-item {
   margin-bottom: 20px;
 }
 
-.right p {
-  max-width: 90%;
-  font-size: 1em;
-  letter-spacing: 2px;
-  text-align: right;
-  color: rgba(0, 0, 0, 0.4);
-}
 
 /* Features */
 .features {

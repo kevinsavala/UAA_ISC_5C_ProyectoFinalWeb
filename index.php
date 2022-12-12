@@ -18,11 +18,6 @@
 </head>
 
 <body>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-
     <?php
         if(isset($_SESSION['logueado']) && $_SESSION['logueado']==1){
             ?>
@@ -46,8 +41,8 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="AcercaDe.php">Acerca de</a></li>
-                    <li><a href="Contacto.php">Contacto</a></li>
+                    <li><a href="Acercade.php">Acerca de</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
@@ -86,12 +81,11 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="AcercaDe.php">Acerca de</a></li>
-                    <li><a href="Contacto.php">Contacto</a></li>
+                    <li><a href="Acercade.php">Acerca de</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-                    
                     <li><a href="loginForm.php">Inicio de sesion</a></li>
                     <li><a href="signupForm.php">Registrarse</a></li>
                     
@@ -100,13 +94,7 @@
 
         </div>
     </nav>
-    <!-- /Nav -->
     <?php }?>
-
-
-
-
-
 
     <!-- capa -->
     <div class="capa">
@@ -161,13 +149,17 @@
 
                 <!-- Recursos-->
                 <div class="col-md-6">
-                    <h2>Body Art</h2>
+                    <h2>Tips:</h2>
 
+                    <h3>Primero...</h3>
                     <p>
-                    El body art es una forma de comunicación, un lenguaje visual donde el tatuaje es un medio de expresión y también de formación de nuestra subjetividad; ya sea como un puente de comunicación o una forma de identidad, los tatuajes hoy en día son formas de marcar en nosotros una idea o un sentimiento a través del arte y la piel.
+                        ---
                     </p>
 
-                    
+                    <h3>Segundo...</h3>
+                    <p>
+                        ----
+                    </p>
 
                 </div>
 

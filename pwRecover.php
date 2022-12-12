@@ -79,8 +79,8 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="AcercaDe.php">Acerca de</a></li>
-                    <li><a href="Contacto.php">Contacto</a></li>
+                    <li><a href="Acercade.php">Acerca de</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>

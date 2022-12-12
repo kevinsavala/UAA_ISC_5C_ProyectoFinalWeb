@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cosas de Tatuajes | Japones</title>
+    <link rel="stylesheet" href="css/Gallery.css">
+</head>
+
 <?php session_start();
 ?>
 
@@ -46,8 +57,8 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="AcercaDe.php">Acerca de</a></li>
-                    <li><a href="Contacto.php">Contacto</a></li>
+                    <li><a href="Acercade.php">Acerca de</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
@@ -86,8 +97,8 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="AcercaDe.php">Acerca de</a></li>
-                    <li><a href="Contacto.php">Contacto</a></li>
+                    <li><a href="Acercade.php">Acerca de</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
@@ -114,35 +125,70 @@
    <br>
    <br>
    <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+    <div class="galeria">
+        <h1>Galeria Japones</h1>
+        <div class="linea"></div>
+        <div class="contenedor-imagenes">
+            <div class="imagen">
+                <img src="img/1 (2).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (3).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (4).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (5).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (6).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (7).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (8).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (9).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscribete</h2>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/1 (10).jpg" alt="">
+                <div class="overlay">
+                    <h2>Suscriberte</h2>
+                </div>
+            </div>
+            <!-- <div class="imagen">
+                <img src="img/1 (2).jpg" alt="">
+            </div> -->
+        </div>
+    </div>
+
    
    <!-- Rodape -->
     <footer id="rodape">
@@ -173,10 +219,8 @@
                         <li><a href="#">Estilos</a></li>
                         <li><a href="#">Marcas</a></li>
                     </ul>
-                </div>
 
-
-
+               
                 <!-- redes solciais -->
                 <div class="col-md-4">
                     <ul class="nav">
@@ -185,7 +229,7 @@
                             </a>
                         </li>
                         <li class="item-rede-social">
-                            <a href="#" class="btn btn-md btn-custom btn-roxo">Intagram</a>
+                            <a href="#" class="btn btn-md btn-custom btn-roxo">Instagram</a>
                             <br>
                         </li>
                         <li class="item-rede-social">
