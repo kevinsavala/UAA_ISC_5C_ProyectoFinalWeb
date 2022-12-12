@@ -140,14 +140,14 @@
     <br>
     <br>
     <br>
-    <br>
-    
+    <br>     
+     
 <section class="contacto">
    <main class="px-5 text-light">
-            <form class="row g-3" action="correo1.php" method="post">
+            <form class="row g-3" action="contactoSendMail.php" method="post">
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label" style="color:white;">Correo Electronico</label>
-                    <input type="email" class="form-control textoBG" id="inputEmail4" name="emaill">
+                    <input type="email" class="form-control textoBG" id="inputEmail4" name="email">
                 </div>
                 <div class="col-md-6">
                     <label for="inputText44" class="form-label" style="color:white;">Nombre</label>
@@ -155,18 +155,17 @@
                 </div>
                 <div class="col-md-4">
                     <label for="inputState" class="form-label" style="color:white;">Razón de contacto</label>
-                    <select id="inputState" class="form-select  textoBG">
-                        <option selected="">Choose...</option>
-                        <option>Sugerencia</option>
-                        <option>Queja</option>
-                        <option>Problema Pagos</option>
-                        <option>Cuenta/Inicio de seción</option>
+                    <select id="inputState" class="form-select  textoBG" name="razon">
+                        <option value="sugerencia">Sugerencia</option>
+                        <option value="queja">Queja</option>
+                        <option value="pago">Problema Pagos</option>
+                        <option value="cuenta">Cuenta/Inicio de seción</option>
                     </select>
                 </div>
                 
                 <div class="col-12">
                     <label for="inputTextArea" class="form-label"style="margin-top:30px;color:white">Informacion adicional</label>
-                    <textarea class="form-control form-control-lg textoBG" id="inputTextArea" placeholder="Danos mas detalles para poder atenderte lo mejor posible."></textarea>
+                    <textarea class="form-control form-control-lg textoBG" id="inputTextArea" placeholder="Danos mas detalles para poder atenderte lo mejor posible." name="mensaje"></textarea>
                 </div>
 
                 <div class="col-12">
