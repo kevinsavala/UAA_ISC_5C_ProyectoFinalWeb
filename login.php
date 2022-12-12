@@ -21,7 +21,15 @@
         //BUSCAR EL USERNAME EN LA BASE DE DATOS
         if(usernameExists($usuario)){
             //USUARIO EXISTE, COMPARAR CONTRASEÑA CHECAR BLOQUEO
-            if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && mustChangePw($usuario)){
+            if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && checkForAdmin($usuario)){
+                $_SESSION['logueado'] = "1";
+                $_SESSION['user'] = $usuario;
+                $_SESSION['nombre'] = getName($usuario);
+                $_SESSION['intentoLog'] = "0";
+                $_SESSION['intentos']=0;
+                header("Location: adminPage.php");
+                exit();   
+            }else if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && mustChangePw($usuario)){
                 $_SESSION['logueado'] = "1";
                 $_SESSION['user'] = $usuario;
                 $_SESSION['nombre'] = getName($usuario);
@@ -123,5 +131,14 @@ function mustChangePw($user){
         return false;
     }
 }
-                      
+
+function checkForAdmin($user){
+    $data = consult("select admin from usuarios where cuenta='$user';");
+    if($data[0][0] == 1){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 ?>
