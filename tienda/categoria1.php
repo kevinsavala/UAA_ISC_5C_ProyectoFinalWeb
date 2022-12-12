@@ -30,7 +30,9 @@
                     
                 } ?> </div> <?php
             }else{
-                // mostrar error
+                $_SESSION['errorsote'] = "ERROR AL CARGAR LOS ITEMS DE LA BASE DE DATOS";
+                header("Location: ../error.php");
+                exit();
             }
         ?>
     </main>

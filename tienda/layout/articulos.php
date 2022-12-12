@@ -2,7 +2,7 @@
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="../img/<?php echo $item["imagen"];?>">
+                <img src="img/<?php echo $item["imagen"];?>" alt="img/<?php echo $item["imagen"];?> not found">
             </div>
                 <div class="flip-card-back">
             <input type="hidden" id="id" value="<?php echo $item['id'];  ?>">
