@@ -5,5 +5,5 @@ $sentenciaExistencia = $base_de_datos->prepare("UPDATE productos SET existencia 
 foreach ($_SESSION["carrito"] as $producto) {
 	$sentenciaExistencia->execute([$producto->cantidad, $producto->id]);
 }
-header("Location: ./Prdouctos.php");
+header("Location: ./Productos.php");
 >
