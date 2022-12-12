@@ -43,17 +43,53 @@
         }
 
     </style>
-    </head>
-    <body>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+</head>
+
+<body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <?php
         if(isset($_SESSION['logueado']) && $_SESSION['logueado']==1){
-            header("Location: index.php");
-            exit();
+           ?>
+    <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
+        <div class="container">
+
+            <!-- header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a href="index.php" class="navbar-brand">
+                    <span class="img-logo">Cosas de Tatuadores</span>
+                </a>
+            </div>
+            <!-- navbar -->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="Acercade.php">Acerca de</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
+                    <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
+                    <li><a href="tienda/Productos.php">Tienda</a></li>
+                    <li class="divisor" role="separator"></li>
+                    <li>
+                        <p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p>
+                    </li>
+                    <li style="margin-left:60px;" class="divisor" role="separator"></li>
+                    <li><a href="logout.php">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- /Nav -->
+    <?php
         } else { 
     ?>
 
@@ -84,10 +120,10 @@
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-                    
+
                     <li><a href="loginForm.php">Inicio de sesion</a></li>
                     <li><a href="signupForm.php">Registrarse</a></li>
-                    
+
                 </ul>
             </div>
 
@@ -96,76 +132,56 @@
     <!-- /Nav -->
     <?php }?>
 
-   
-   
-   
+
+
+
     <div class="container" style="margin-top:200px; margin-bottom:230px;">
         <div class="vertical-center">
-            <form action="signup.php" method="post" style="color:white">
-               <input type="hidden" name="login" value="1">
-                
-                   <div class="row g-3 align-items-center">
-                    <div class="col-auto">
-                        <label for="nombre" class="col-form-label">Nombre</label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="text" id="nombre" class="form-control textoBG" name="name">
-                    </div>
-                </div>
-                
+            <form action="newpw.php" method="post" style="color:white">
                 <div class="row g-3 align-items-center">
                     <div class="col-auto">
-                        <label for="usuario" class="col-form-label">Usuario</label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="text" id="usuario" class="form-control textoBG" name="username">
-                    </div>
-                </div>
-                
-                <div class="row g-3 align-items-center">
-                    <div class="col-auto">
-                        <label for="mail" class="col-form-label">Correo</label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="email" id="mail" class="form-control textoBG" name="email">
-                    </div>
-                </div>
-
-                <div class="row g-3 align-items-center">
-                    <div class="col-auto">
-                        <label for="contra" class="col-form-label">Contraseña</label>
+                        <label for="contra" class="col-form-label">Nueva contraseña</label>
                     </div>
                     <div class="col-auto">
                         <input name="password" type="password" id="contra" class="form-control textoBG" aria-describedby="passwordHelpInline">
                     </div>
                 </div>
-                
+
                 <div class="row g-3 align-items-center">
                     <div class="col-auto">
                         <label for="ccontra" class="col-form-label">Confirmar contraseña</label>
                     </div>
                     <div class="col-auto">
-                        <input name="pwConfirm" type="password" id="ccontra" class="form-control textoBG" aria-describedby="passwordHelpInline">
+                        <input name="passwordC" type="password" id="ccontra" class="form-control textoBG" aria-describedby="passwordHelpInline">
                     </div>
-                </div>
-                
-                <div class="elem-group">
-                        <label for="captcha" style="color:white">Por favor ingresa el texto del Captcha:</label>
-                        <label>captcha xd</label>
-                        <input type="text" id="captcha" name="captcha_challenge" style="color:black">
                 </div>
 
                 <div class="row g-3 align-items-center">
-                    <br><button type="submit" class="btn btn-md btn-custom btn-roxo">Registrarme</button>
+                    <br><button type="submit" class="btn btn-md btn-custom btn-roxo">Cambiar contraseña</button>
                 </div>
-
                 
+                <?php 
+                    if(isset($_SESSION['pwConfirmError']) && $_SESSION['pwConfirmError']==1){
+                        ?>
+                        <div class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                 <label class="col-form-label" style="color:red">Las contraseñas no coinciden.</label>
+                            </div>
+                         </div>
+                        <?php
+                        unset($_SESSION['pwConfirmError']);
+                    }
+                ?>
+                
+                
+                
+
             </form>
         </div>
     </div>
 
-    
-    
+
+
 
     <!-- Rodape -->
     <footer id="rodape">
@@ -221,7 +237,7 @@
 
                     <span style="text-align:justify;">
                         <strong style="color: aliceblue"></strong>
-                        |<span >Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
+                        |<span>Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
                     </span>
                 </div>
 

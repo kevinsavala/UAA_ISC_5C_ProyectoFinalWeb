@@ -41,7 +41,7 @@
               </a>
             </li>
             <li class="item-rede-social">
-              <a href="#" class="btn btn-primary">Intagram</a>
+              <a href="#" class="btn btn-primary">Instagram</a>
             </li>
             <li class="item-rede-social">
               <a href="#" class="btn btn-primary">Facebook</a>

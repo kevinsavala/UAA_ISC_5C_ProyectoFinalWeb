@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +21,7 @@
 
     <main>
         <?php
-            $response = json_decode(file_get_contents('http://localhost/cursophp/tienda/api/productos/api-productos.php?categoria=Maquinas'), true); ?>
+            $response = json_decode(file_get_contents('https://cosasdetatuaje.000webhostapp.com/tienda/api/productos/api-productos.php?categoria=Maquinas'), true); ?>
         <div class="row"> <?php
             if($response['statuscode'] == 200){
                 foreach($response['items'] as $item){
@@ -27,7 +30,9 @@
                     
                 } ?> </div> <?php
             }else{
-                // mostrar error
+                $_SESSION['errorsote'] = "ERROR AL CARGAR LOS ITEMS DE LA BASE DE DATOS";
+                header("Location: ../error.php");
+                exit();
             }
         ?>
     </main>

@@ -1,7 +1,15 @@
-<?php session_start();
+<?php 
+    session_start();
+    function codigoCaptcha(){
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
 ?>
-
-<!DOCTYPE html>
 <html lang="">
 
 <head>
@@ -15,10 +23,29 @@
     <!-- Bootstrap -->
     <link href="css/Extras.css" rel="stylesheet">
     <link href="css/estilo.css" rel="stylesheet">
-</head>
+    <style>
+        height: 200px;
+        position: relative;
+        border: 3px solid green;
+        }
 
-<body>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .textoBG {
+            background-color: #404040;
+            color: white;
+        }
+
+    </style>
+    </head>
+    <body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -26,41 +53,42 @@
     <?php
         if(isset($_SESSION['logueado']) && $_SESSION['logueado']==1){
             ?>
-    <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
-        <div class="container">
+            <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
+                <div class="container">
 
-            <!-- header -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
-                    <span class="sr-only"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <!-- header -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                            <span class="sr-only"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
 
-                </button>
-                <a href="index.php" class="navbar-brand">
-                    <span class="img-logo">Cosas de Tatuadores</span>
-                </a>
-            </div>
-            <!-- navbar -->
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="AcercaDe.php">Acerca de</a></li>
-                    <li><a href="Contacto.php">Contacto</a></li>
-                    <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
-                    <li><a href="tienda/Productos.php">Tienda</a></li>
-                    <li class="divisor" role="separator"></li>
-                    <li><p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p></li>
-                    <li style="margin-left:60px;" class="divisor" role="separator"></li>
-                    <li><a href="logout.php">Cerrar sesión</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- /Nav -->
-
-    <?php
+                        </button>
+                        <a href="index.php" class="navbar-brand">
+                            <span class="img-logo">Cosas de Tatuadores</span>
+                        </a>
+                    </div>
+                    <!-- navbar -->
+                    <div class="collapse navbar-collapse" id="menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="index.php">Inicio</a></li>
+                            <li><a href="Acercade.php">Acerca de</a></li>
+                            <li><a href="contacto.php">Contacto</a></li>
+                            <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
+                            <li><a href="tienda/Productos.php">Tienda</a></li>
+                            <li class="divisor" role="separator"></li>
+                            <li>
+                                <p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p>
+                            </li>
+                            <li style="margin-left:60px;" class="divisor" role="separator"></li>
+                            <li><a href="logout.php">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- /Nav -->
+            <?php
         } else { 
     ?>
 
@@ -86,8 +114,8 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="AcercaDe.php">Acerca de</a></li>
-                    <li><a href="Contacto.php">Contacto</a></li>
+                    <li><a href="Acercade.php">Acerca de</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
@@ -102,8 +130,7 @@
     </nav>
     <!-- /Nav -->
     <?php }?>
-   
-   
+
   <!-- capa -->
   <div class="capa">
     <div class="texto-capa">
@@ -120,7 +147,7 @@
   </div><!-- /capa -->
 
   
-  <section id="servicos" style="background-color:rgb(255,255,255,.5)">
+  <section id="servicos">
     <div class="container">
 
       <div class="row">
@@ -128,7 +155,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="row albuns">
             <div class="col-md-6">
-              <img src="imagens/IMG_20221130_122148.jpg" class="img-responsive img-rounded">
+              <img src="imagens/Ray.jpg" class="img-responsive img-rounded">
             </div>
 
 
@@ -140,7 +167,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
           <h2>Productos de máxima calidad y con excelente servició al cliente </h2>
           <p>
-            para poder comprar todo se hace a través de nuestra pagina oficial, que cuenta con su plataforma de ventas donde permitira a los clientes 
+            Para poder comprar todo se hace a través de nuestra pagina oficial, que cuenta con su plataforma de ventas donde permitira a los clientes 
             realizar sus pedidos
             <br>
            Cuenta con un área de revisión y empaque para la salida de todos los pedidos que se realizan a diario, el cual es monitoreado y supervisado para que el producto funcione correctamente, el empaque y/o embalaje sea el adecuado para que lleguen de la mejor manera los productos e insumos que nos pide el cliente.
@@ -155,68 +182,99 @@
     </div> <!-- /Container -->
   </section>
 
-   
-   <!-- Rodape -->
-    <footer id="rodape">
-        <div class="container">
-            <div class="row">
+  <!-- Sessão de Recursos -->
+  <section id="recursos">
+    <div class="container">
+      <div class="row">
 
-                <!-- logo -->
-                <div class="col-md-2">
-                    <span class="">Cosas de Tatuajes</span>
-                </div>
+        <!-- Recursos-->
+        <div class="col-md-6">
+          <h2>Productos Mexicanos!</h2>
 
+          <h3></h3>
+          <p>
+            En esta pagina estamos orgullosos de nuestra nacionalida, y apoyamos las marcas mexicanas que existen en nuestro país, cremas, agujas , espuma, Vaselina para tatuajes, o post tatuajes 
+          </p>
 
-                <div class="col-md-2">
-                    <h4>Cosas de tatuajes</h4>
-                    <ul class="nav">
-                        <li> <a href="#">Extras</a></li>
-                        <li> <a href="#">Entregas</a></li>
-                        <li> <a href="#">Sobre Nosotros</a></li>
-                        <li> <a href="#">Novedades</a></li>
-                    </ul>
-                </div>
+          <p>
+          pregunta por ellas y con gusto te orientaremos en la gama de los mejores articulos  creados en nuestro país. 
+          </p>
 
-                <!-- comunidades -->
-                <div class="col-md-2">
-                    <h4>Comunidades</h4>
-                    <ul class="nav">
-                        <li><a href="#">Artistas</a></li>
-                        <li><a href="#">Estilos</a></li>
-                        <li><a href="#">Marcas</a></li>
-                    </ul>
-                </div>
+        </div>
+
+      </div><!-- /row -->
+    </div><!-- /Container -->
+  </section>
 
 
 
-                <!-- redes solciais -->
-                <div class="col-md-4">
-                    <ul class="nav">
-                        <li class="item-rede-social">
-                            <a href=""><img src="">
-                            </a>
-                        </li>
-                        <li class="item-rede-social">
-                            <a href="#" class="btn btn-md btn-custom btn-roxo">Intagram</a>
-                            <br>
-                        </li>
-                        <li class="item-rede-social">
-                            <a href="#" class="btn btn-md btn-custom btn-roxo">Facebook</a>
-                        </li>
-                    </ul>
-                    <a href="" style="margin-right:10px" target="">
-                        <img src="">
-                    </a>
+  <!-- Rodape -->
+  <footer id="rodape">
+    <div class="container">
+      <div class="row">
 
-                    <span style="text-align:justify;">
-                        <strong style="color: aliceblue"></strong>
-                        |<span >Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
-                    </span>
-                </div>
+        <!-- logo -->
+        <div class="col-md-2">
+          <span class="">Cosas de Tatuajes</span>
+        </div>
+
+       
+        <div class="col-md-2">
+          <h4>Cosas de tatuajes</h4>
+          <ul class="nav">
+            <li> <a href="#">Extras</a></li>
+            <li> <a href="#">Entregas</a></li>
+            <li> <a href="#">Sobre Nosotros</a></li>
+            <li> <a href="#">Novedades</a></li>
+          </ul>
+        </div>
+
+        <!-- comunidades -->
+        <div class="col-md-2">
+          <h4>Comunidades</h4>
+          <ul class="nav">
+            <li><a href="#">Artistas</a></li>
+            <li><a href="#">Estilos</a></li>
+            <li><a href="#">Marcas</a></li>
+          </ul>
+        </div>
+
+       
+
+        <!-- redes solciais -->
+        <div class="col-md-4">
+          <ul class="nav">
+            <li class="item-rede-social">
+              <a href=""><img src="">
+              </a>
+            </li>
+            <li class="item-rede-social">
+              <a href="#" class="btn btn-primary">Intagram</a>
+            </li>
+            <li class="item-rede-social">
+              <a href="#" class="btn btn-primary">Facebook</a>
+            </li>
+          </ul>
+          <a href="" style="margin-right:10px" target="">
+            <img src="">
+          </a>
+
+          <span>
+            <strong style="color: aliceblue"></strong>
+            |<span>---</span> | &copy; 2022
+          </span>
+        </div>
 
 
-            </div><!-- /row -->
-        </div> <!-- /Container -->
-    </footer>
+      </div><!-- /row -->
+    </div> <!-- /Container -->
+  </footer>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>
