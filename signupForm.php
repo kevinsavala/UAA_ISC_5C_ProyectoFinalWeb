@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    function codigoCaptcha(){
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    function codigoCaptcha($length=5){
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < $length; $i++) {
@@ -9,6 +9,7 @@
         }
         return $randomString;
     }
+        $captcha = codigoCaptcha();
 ?>
 <html lang="">
 
@@ -42,10 +43,21 @@
             color: white;
         }
 
+        @import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
+        svg text {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            stroke-width: 3px;
+            stroke-linejoin: round;
+        }
+
     </style>
-    </head>
-    <body>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+</head>
+
+<body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -84,10 +96,10 @@
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-                    
+
                     <li><a href="loginForm.php">Inicio de sesion</a></li>
                     <li><a href="signupForm.php">Registrarse</a></li>
-                    
+
                 </ul>
             </div>
 
@@ -96,23 +108,24 @@
     <!-- /Nav -->
     <?php }?>
 
-   
-   
-   
+
+
+
     <div class="container" style="margin-top:200px; margin-bottom:230px;">
         <div class="vertical-center">
             <form action="signup.php" method="post" style="color:white">
-               <input type="hidden" name="login" value="1">
-                
-                   <div class="row g-3 align-items-center">
+                <input type="hidden" name="login" value="1">
+
+                <div class="row g-3 align-items-center">
                     <div class="col-auto">
+                        <p class="col-form-label">Sugerencias de nombre: <span id="txtHint"></span></p>
                         <label for="nombre" class="col-form-label">Nombre</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="nombre" class="form-control textoBG" name="name">
+                        <input type="text" id="nombre" class="form-control textoBG" name="name" onkeyup="showHint(this.value)">
                     </div>
                 </div>
-                
+
                 <div class="row g-3 align-items-center">
                     <div class="col-auto">
                         <label for="usuario" class="col-form-label">Usuario</label>
@@ -121,7 +134,7 @@
                         <input type="text" id="usuario" class="form-control textoBG" name="username">
                     </div>
                 </div>
-                
+
                 <div class="row g-3 align-items-center">
                     <div class="col-auto">
                         <label for="mail" class="col-form-label">Correo</label>
@@ -139,7 +152,7 @@
                         <input name="password" type="password" id="contra" class="form-control textoBG" aria-describedby="passwordHelpInline">
                     </div>
                 </div>
-                
+
                 <div class="row g-3 align-items-center">
                     <div class="col-auto">
                         <label for="ccontra" class="col-form-label">Confirmar contraseña</label>
@@ -148,10 +161,47 @@
                         <input name="pwConfirm" type="password" id="ccontra" class="form-control textoBG" aria-describedby="passwordHelpInline">
                     </div>
                 </div>
-                
+
                 <div class="elem-group">
-                        <label for="captcha" style="color:white">Por favor ingresa el texto del Captcha:</label>
-                        <label>captcha xd</label>
+
+                        
+                        <svg style="margin-top:20px; margin-bottom:-70px"width="200" height="100" viewBox="0 0 700 200" stroke="#000" stroke-width="3">
+                        <defs>
+                            <filter id="textFilter">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="turbulence" data-filterId="5" />
+                                <feDisplacementMap id="distortion" in="SourceGraphic" in2="turbulence" scale="20">
+                                    <!-- 								<animate attributeName="scale" values="40; 60; 40" dur="10s" repeatCount="indefinite"></animate> -->
+                                </feDisplacementMap>
+                            </filter>
+                        </defs>
+                        <text x="10%" y="40%" font-size="150" fill="#3d56ce" stroke="#8999e5" filter="url(#textFilter)">
+                            <?php echo $captcha ;?>
+                        </text>
+                    </svg>
+                    <script>
+                        var tl = new TimelineMax({
+                            repeat: -1,
+                            yoyo: true
+                        });
+
+                        tl.to("#distortion", 1, {
+                                attr: {
+                                    scale: 60
+                                },
+                                ease: Power2.easeOut
+                            })
+                            .to("#distortion", 1, {
+                                attr: {
+                                    scale: 40
+                                },
+                                ease: Power2.easeOut
+                            });
+
+                    </script>    
+                        
+                        
+                        
+                             <label for="captcha" style="color:white">Por favor ingresa el texto del Captcha:</label>
                         <input type="text" id="captcha" name="captcha_challenge" style="color:black">
                 </div>
 
@@ -159,13 +209,26 @@
                     <br><button type="submit" class="btn btn-md btn-custom btn-roxo">Registrarme</button>
                 </div>
 
-                
+
             </form>
+            <script>
+                function showHint(str) {
+                    if (str.length == 0) {
+                        document.getElementById("txtHint").innerHTML = "";
+                        return;
+                    } else {
+                        const xmlhttp = new XMLHttpRequest();
+                        xmlhttp.onload = function() {
+                            document.getElementById("txtHint").innerHTML = this.responseText;
+                        }
+                        xmlhttp.open("GET", "gethint.php?letter=" + str);
+                        xmlhttp.send();
+                    }
+                }
+
+            </script>
         </div>
     </div>
-
-    
-    
 
     <!-- Rodape -->
     <footer id="rodape">
@@ -221,7 +284,7 @@
 
                     <span style="text-align:justify;">
                         <strong style="color: aliceblue"></strong>
-                        |<span >Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
+                        |<span>Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
                     </span>
                 </div>
 

@@ -1,0 +1,58 @@
+<?php
+    $letra = strtoupper($_GET['letter']);
+    switch($letra){
+            case 'A': echo "Ana, Alice, Amanda";
+            break;
+            case 'B': echo "Benjamin, Barik, Buck, Brandon";
+            break;
+            case 'C': echo "Carlos, Catherine, Constanza";
+            break;
+            case 'D': echo "Daniel, Darien, Dominic, David";
+            break;
+            case 'E': echo "Erendira, Esteban";
+            break;
+            case 'F': echo "Francisco, Fabiola";
+            break;
+            case 'G': echo "Gerald, Gustavo";
+            break;
+            case 'H': echo "Hazel, Homerosinson";
+            break;
+            case 'I': echo "Isabel, Iris";
+            break;
+            case 'J': echo "Jacob, Josue";
+            break;
+            case 'K': echo "Kenia, Kevin, Kurt";
+            break;
+            case 'L': echo "Lautaro, Lauren";
+            break;
+            case 'M': echo "Michelle, Mitzi, Manuel";
+            break;
+            case 'N': echo "Nadia, Norbit";
+            break;
+            case 'O': echo "Osvaldo, Oribe";
+            break;
+            case 'P': echo "Page, Phil";
+            break;
+            case 'Q': echo "Quetzal";
+            break;
+            case 'R': echo "Raul, Rosa";
+            break;
+            case 'S': echo "Samuel, Sofia";
+            break;
+            case 'T': echo "Thomas, Tamara";
+            break;
+            case 'U': echo "Ulises, Ursula";
+            break;
+            case 'V': echo "Viktor, Valera";
+            break;
+            case 'W': echo "Wallace, Walter, Walkiria";
+            break;
+            case 'X': echo "Xochitl, Xavier";
+            break;
+            case 'Y': echo "Yair, Yuri";
+            break;
+            case 'Z': echo "Zoe";
+            break;
+        default: echo "Sin sugerencias.";
+    }
+?>
