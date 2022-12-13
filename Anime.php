@@ -127,37 +127,37 @@
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (3).jpg" alt="">
+                <img src="imagens/Chansawman.jpg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (4).jpg" alt="">
+                <img src="imagens/Megumi%20Fushiguro.jpg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (5).jpg" alt="">
+                <img src="imagens/elquenoesdeku.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (6).jpg" alt="">
+                <img src="imagens/sukuna.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (7).jpg" alt="">
+                <img src="imagens/urry.jpg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (8).jpg" alt="">
+                <img src="imagens/mononoke.jpg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
@@ -169,7 +169,7 @@
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (10).jpg" alt="">
+                <img src="imagens/Ray.jpg" alt="">
                 <div class="overlay">
                     <h2>Suscriberte</h2>
                 </div>
