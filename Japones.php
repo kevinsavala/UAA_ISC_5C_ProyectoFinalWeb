@@ -132,55 +132,55 @@
             <div class="imagen">
                 <img src="imagens/japo1.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Hanya Mask</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/japo2.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Dragon</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/japo3.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Mangas</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/japo4.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Gato y sepriente</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/japo5.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Serpiente/h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/japo6.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Gato</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/japo7.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Mascara</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/japo8.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Tigre</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/Cuban%20Cafecito.png" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>cafe</h2>
                 </div>
             </div>
             <!-- <div class="imagen">
