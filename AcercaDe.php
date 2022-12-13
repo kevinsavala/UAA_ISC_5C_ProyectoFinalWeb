@@ -147,7 +147,7 @@
   </div><!-- /capa -->
 
   
-  <section id="servicos">
+  <section id="servicos" style="background-color: rgb(255,255,255,0.5)">
     <div class="container">
 
       <div class="row">
@@ -155,7 +155,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="row albuns">
             <div class="col-md-6">
-              <img src="imagens/Ray.jpg" class="img-responsive img-rounded">
+              <img src="imagens/urry.jpg" class="img-responsive img-rounded">
             </div>
 
 
