@@ -130,57 +130,57 @@
         <div class="linea"></div>
         <div class="contenedor-imagenes">
             <div class="imagen">
-                <img src="img/1 (2).jpg" alt="">
+                <img src="imagens/japo1.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (3).jpg" alt="">
+                <img src="imagens/japo2.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (4).jpg" alt="">
+                <img src="imagens/japo3.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (5).jpg" alt="">
+                <img src="imagens/japo4.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (6).jpg" alt="">
+                <img src="imagens/japo5.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (7).jpg" alt="">
+                <img src="imagens/japo6.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (8).jpg" alt="">
+                <img src="imagens/japo7.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (9).jpg" alt="">
+                <img src="imagens/japo8.jpeg" alt="">
                 <div class="overlay">
                     <h2>Suscribete</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (10).jpg" alt="">
+                <img src="imagens/Cuban%20Cafecito.png" alt="">
                 <div class="overlay">
-                    <h2>Suscriberte</h2>
+                    <h2>Suscribete</h2>
                 </div>
             </div>
             <!-- <div class="imagen">
