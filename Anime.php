@@ -129,49 +129,49 @@
             <div class="imagen">
                 <img src="imagens/Chansawman.jpg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Chainsawman</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/Megumi%20Fushiguro.jpg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Megumi</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/elquenoesdeku.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Bakugou</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/sukuna.jpeg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Sukuna</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/urry.jpg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Inosuke de Urry</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/mononoke.jpg" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Princesa Mononoke</h2>
                 </div>
             </div>
             <div class="imagen">
-                <img src="img/1 (9).jpg" alt="">
+                <img src="imagens/inosuke.png" alt="">
                 <div class="overlay">
-                    <h2>Suscribete</h2>
+                    <h2>Inouske</h2>
                 </div>
             </div>
             <div class="imagen">
                 <img src="imagens/Ray.jpg" alt="">
                 <div class="overlay">
-                    <h2>Suscriberte</h2>
+                    <h2>Rey</h2>
                 </div>
             </div>
             <!-- <div class="imagen">
