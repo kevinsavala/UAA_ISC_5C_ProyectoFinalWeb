@@ -1,4 +1,32 @@
-<?php session_start();
+<?php 
+session_start();
+?>
+
+<?php
+	$servidor = 'localhost';
+    $cuenta = 'id19993614_admin';
+    $password = 'CR/#+fJer~?aDEk6';
+    $bd = 'id19993614_482482';
+	$conexion = new mysqli($servidor,$cuenta,$password,$bd);
+	if ($conexion->connect_errno){
+		die('Error en la conexion');
+	}else{
+		if(isset($_POST['submit'])&& !empty($_POST['id'])){
+			$id = $_POST['id'];
+			$nombre = $_POST['nombre'];
+			$categoria = $_POST['categoria'];
+			$descripcion = $_POST['descripcion'];
+			$existencia = $_POST['existencia'];
+			$precio = $_POST['precio'];
+			$imagen = basename($_POST['imagen']);
+			$sql = "INSERT INTO Productos (id,nombre,categoria,descripcion,existencia,precio,imagen) VALUES ($id,'$nombre','$categoria','$descripcion',$existencia,$precio,'$imagen');";
+			
+			$conexion->query($sql);
+			if($conexion->affected_rows >= 1){
+				echo '<script> alert("registro insertado") </script>';
+			}
+		}
+	}
 ?>
 
 <!DOCTYPE html>
@@ -42,13 +70,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="Acercade.php">Acerca de</a></li>
-                    <li><a href="contacto.php">Contacto</a></li>
+                    <li><a href="Contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-                    <li>
-                        <p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p>
-                    </li>
+                    <li><p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p></li>
                     <li style="margin-left:60px;" class="divisor" role="separator"></li>
                     <li><a href="logout.php">Cerrar sesión</a></li>
                 </ul>
@@ -84,13 +110,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="Acercade.php">Acerca de</a></li>
-                    <li><a href="contacto.php">Contacto</a></li>
+                    <li><a href="Contacto.php">Contacto</a></li>
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
                     <li><a href="loginForm.php">Inicio de sesion</a></li>
                     <li><a href="signupForm.php">Registrarse</a></li>
-
+                    
                 </ul>
             </div>
 
@@ -99,67 +125,47 @@
     <?php }?>
 
     <!-- capa -->
-    <div class="capa">
-        <div class="texto-capa">
-            <h1>Tatuajes Recomendados</h1>
-            <a href="Anime.php" class="btn btn-lg btn-custom btn-roxo">Anime</a>
-            <a href="Japones.php" class="btn btn-lg btn-custom btn-branco">Estilo Japones</a>
-
-        </div>
-    </div><!-- /capa -->
-
-    <!-- ====Conteudo==== -->
-    <!-- Seção de Serviços -->
-    <section id="servicos">
-        <div class="container">
-
-            <div class="row">
-                <!-- tatto -->
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="row albuns">
-                        <div class="col-md-6">
-                            <img src="imagens/Ray.jpg" class="img-responsive img-rounded">
-                        </div>
-
-
-                    </div><!-- /row 01 -->
-
-                </div>
-
-                <!-- Servicios -->
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h2>¿Quiénes somos?</h2>
-                    <p>
-                        Somos la mejor tienda de productos de tatuaje en Aguascalientes.Desde el 2015 esta tienda ha surtido a cientos de estudios de tatuaje en Aguascalientes, brindando los productos de mejor calidad a los mejores precios del mercado.
-                        <br>
-                        En Cosas de Tatuaje te aseguramos que estaras satisfecho con tu compra, y si no lo estas contamos con devolucion gratis.
-                        <br>
-                        Estamos celebrando nuestra apertura online! </p><p style="color: purple;font-weight:bold;font-style:italic;background-color:rgb(0,0,0,0.1);">Utiliza el codigo APERTURACDT para obtener un descuento de 50 pesos en cualquiera de tus compras.</p>
-
-                </div><!-- /servicios -->
-
-            </div><!-- /row -->
-
-        </div> <!-- /Container -->
-    </section>
-
-    <div class="card text-center" style="background-color:white; margin-top:60px; margin-bottom:60px;">
-        <div class="card-header" style="color:black">
-            <h3 style="font-weight:bold; font-style:italic">SUSCRIBETE!</h3>
-        </div>
-        <div class="card-body">
-            <form action="enviarCupon.php" method="post">
-                <h5 class="card-title" style="color:black">Ingresa tu correo electrónico para recibir las últimas ofertas y noticias de Cosas de Tatuajes!</h5>
-                <input type="email" class="form-control" style="text-align:center;" name="email">
-                <button type="submit" class="btn btn-md btn-custom btn-roxo">Suscribirme</button>
-            </form>
-            
-        </div>
-        <div class="card-footer text-muted">
-            Recibe un cupón gratis para tu primera compra! 
-        </div>
-    </div>
-
+    
+	<div id="menuABM" style="padding: 5%; width: 100%">
+		<nav aria-label="...">
+			<ul class="pagination pagination-sm">
+				<li class="page-item active" aria-current="page">
+					<span class="page-link">Altas</span>
+				</li>
+				<li class="page-item"><a class="page-link" href="Bajas.php">Bajas</a></li>
+				<li class="page-item"><a class="page-link" href="Modificaciones.php">Modificaciones</a></li>
+			</ul>
+		</nav>
+		
+		<div id="altas" style="padding: 2%">
+			<legend style="color: white;">Agregar productos a la base de datos</legend>
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+				<label for="id" class="form-label" style="color:white;">Id</label>
+				<input type="number" name="id" class="form-control textoBG" id="id">
+				
+				<label for="nombre" class="form-label" style="color:white;">Nombre</label>
+				<input type="text" name="nombre" class="form-control textoBG" id="nombre">
+				
+				<label for="categoria" class="form-label" style="color:white;">Categoría</label>
+				<input type="text" name="categoria" class="form-control textoBG" id="categoria">
+				
+				<label for="descripcion" class="form-label" style="color:white;">Descripción</label>
+				<textarea name="descripcion" class="form-control textoBG" id="descripcion" style="resize: none;"></textarea>
+				
+				<label for="existencia" class="form-label" style="color:white;">Existencia</label>
+				<input type="number" name="existencia" class="form-control textoBG" id="existencia">
+				
+				<label for="precio" class="form-label" style="color:white;">Precio</label>
+				<input type="number" name="precio" class="form-control textoBG" id="precio">
+				
+				<label for="imagen" class="form-label" style="color:white;">Imagen</label>
+				<input type="file" name="imagen" class="form-control" id="imagen" accept="image/*">
+				<br>
+				<button type="submit" class="btn btn-md btn-custom btn-roxo" name="submit">Enviar</button>
+			</form>
+		</div>
+	</div>
+	
     <!-- Rodape -->
     <footer id="rodape">
         <div class="container">
@@ -201,7 +207,11 @@
                             </a>
                         </li>
                         <li class="item-rede-social">
-                            <a href="https://www.facebook.com/profile.php?id=100085496637312" class="btn btn-md btn-custom btn-roxo">Facebook</a>
+                            <a href="provisionalLogin.php" class="btn btn-md btn-custom btn-roxo">Test Login</a>
+                            <br>
+                        </li>
+                        <li class="item-rede-social">
+                            <a href="#" class="btn btn-md btn-custom btn-roxo">Facebook</a>
                         </li>
                     </ul>
                     <a href="" style="margin-right:10px" target="">
@@ -210,7 +220,7 @@
 
                     <span style="text-align:justify;">
                         <strong style="color: aliceblue"></strong>
-                        |<span>Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
+                        |<span >Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
                     </span>
                 </div>
 

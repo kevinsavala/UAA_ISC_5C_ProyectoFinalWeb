@@ -1,4 +1,55 @@
 <?php session_start();
+	
+	$_SESSION['id'] = '';
+    $_SESSION['nom'] = '';
+    $_SESSION['cat'] = '';
+    $_SESSION['descr'] = '';
+    $_SESSION['exis'] = '';
+    $_SESSION['precio'] = '';
+    $_SESSION['img'] = '';
+	
+	$servidor = 'localhost';
+    $cuenta = 'id19993614_admin';
+    $password = 'CR/#+fJer~?aDEk6';
+    $bd = 'id19993614_482482';
+    $conexion = new mysqli($servidor,$cuenta,$password,$bd);   
+	
+    if ($conexion->connect_errno){
+         die('Error en la conexion');
+    }
+
+   if(isset($_POST['submit'])){
+       $modificar=$_POST['modificar'];
+       $_SESSION['modificar2']=$modificar;
+       $sql2="SELECT *
+        FROM Productos
+        WHERE idProd='$modificar'";
+       $resultado=$conexion ->query($sql2);
+       while($fila=$resultado->fetch_assoc()){
+           $_SESSION['id']=$fila['idProd'];
+           $_SESSION['nom']=$fila['nombre'];
+           $_SESSION['cat']=$fila['categoria'];
+           $_SESSION['descr']=$fila['descripcion'];
+           $_SESSION['exis'] =$fila['existencia'];
+           $_SESSION['precio'] =$fila['precio'];
+           $_SESSION['img'] =$fila['imagen'];
+       }
+   } 
+   
+    if(isset($_POST['mod'])){
+        $uno = $_POST['id2'];
+        $dos = $_POST['nombre2'];
+        $tres = $_POST['categoria2'];
+        $cuatro = $_POST['descripcion2'];
+        $cinco = $_POST['existencia2'];
+        $seis = $_POST['precio2'];
+        $siete = $_POST['imagen2'];
+        $modificar1 = $_SESSION['modificar2'];
+        
+        $ne = "UPDATE Productos SET idProd='$uno', nombre='$dos', categoria='$tres', descripcion='$cuatro', existencia='$cinco', precio='$seis', imagen='$siete' WHERE idProd='$modificar1'";
+        $fin=$conexion->query($ne);
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -6,24 +57,25 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cosas de Tatuajes | Anime</title>
+    <title>Cosas de Tatuadores</title>
     <link rel="icon" href="imagens/cosas%20de%20tatuaje.webp">
-    <link rel="stylesheet" href="css/Gallery.css">
+
     <!-- Bootstrap -->
     <link href="css/Extras.css" rel="stylesheet">
     <link href="css/estilo.css" rel="stylesheet">
+
+    <style>
+    	#hola>label{
+    		width: 5%;
+    	}
+    </style>
+    
 </head>
 
 <body>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-
     <?php
         if(isset($_SESSION['logueado']) && $_SESSION['logueado']==1){
             ?>
@@ -52,9 +104,7 @@
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-                    <li>
-                        <p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p>
-                    </li>
+                    <li><p style="padding-left:60px;padding-top:15px; color:white;">Bienvenido, <?php echo $_SESSION['nombre'];?>.</p></li>
                     <li style="margin-left:60px;" class="divisor" role="separator"></li>
                     <li><a href="logout.php">Cerrar sesión</a></li>
                 </ul>
@@ -94,92 +144,96 @@
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-
                     <li><a href="loginForm.php">Inicio de sesion</a></li>
                     <li><a href="signupForm.php">Registrarse</a></li>
-
+                    
                 </ul>
             </div>
 
         </div>
     </nav>
-    <!-- /Nav -->
     <?php }?>
-    
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="galeria">
-        <h1>Galeria De Tatuajes Estilo Anime</h1>
-        <div class="linea"></div>
-        <div class="contenedor-imagenes">
-            <div class="imagen">
-                <img src="imagens/Levi Ackerman Tatto.jpg" alt="">
-                <div class="overlay">
-                    <h2>Levi Ackerman</h2>
-                </div>
-            </div>
-            <div class="imagen">
-                <img src="imagens/Chansawman.jpg" alt="">
-                <div class="overlay">
-                    <h2>Chainsawman</h2>
-                </div>
-            </div>
-            <div class="imagen">
-                <img src="imagens/Megumi%20Fushiguro.jpg" alt="">
-                <div class="overlay">
-                    <h2>Megumi</h2>
-                </div>
-            </div>
-            <div class="imagen">
-                <img src="imagens/elquenoesdeku.jpeg" alt="">
-                <div class="overlay">
-                    <h2>Bakugou</h2>
-                </div>
-            </div>
-            <div class="imagen">
-                <img src="imagens/sukuna.jpeg" alt="">
-                <div class="overlay">
-                    <h2>Sukuna</h2>
-                </div>
-            </div>
-            <div class="imagen">
-                <img src="imagens/urry.jpg" alt="">
-                <div class="overlay">
-                    <h2>Inosuke de Urry</h2>
-                </div>
-            </div>
-            <div class="imagen">
-                <img src="imagens/mononoke.jpg" alt="">
-                <div class="overlay">
-                    <h2>Princesa Mononoke</h2>
-                </div>
-            </div>
-            <div class="imagen">
-                <img src="imagens/inosuke.png" alt="">
-                <div class="overlay">
-                    <h2>Inouske</h2>
-                </div>
-            </div>
-            <div class="imagen">
-                <img src="imagens/Ray.jpg" alt="">
-                <div class="overlay">
-                    <h2>Rey</h2>
-                </div>
-            </div>
-            <!-- <div class="imagen">
-                <img src="img/1 (2).jpg" alt="">
-            </div> -->
-        </div>
-    </div>
 
+    <!-- capa -->
+    
+	<div id="menuABM" style="padding: 5%; width: 100%">
+		<nav aria-label="...">
+			<ul class="pagination pagination-sm">
+				<li class="page-item"><a class="page-link" href="Altas.php">Altas</a></li>
+				<li class="page-item"><a class="page-link" href="Bajas.php">Bajas</a></li>
+				<li class="page-item active" aria-current="page">
+					<span class="page-link">Modificaciones</span>
+				</li>
+			</ul>
+		</nav>
+		
+		<table style="padding: 5%; width: 100%;">
+			<tr>
+				<td>
+					<?php        
+         			$sql = 'select * from Productos';
+         			$resultado = $conexion -> query($sql);         
+         			if ($resultado -> num_rows){
+         		?>
+         		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>  
+           			<legend style="width: 50%">SELECCIONE PRODCUCTO</legend>
+                	<br>
+                	<select   class="custom-select" name='modificar' >
+                		<?php
+                			while( $fila = $resultado -> fetch_assoc() ){ //recorremos los registros obtenidos de la tabla
+                    			echo '<option value="'.$fila["idProd"].'">'.$fila["nombre"].'</option>';
+                    		}//fin while   
+                		?>
+                	</select>
+                	<br><br>
+                	<button type="submit" value="submit" name="submit">Modificar</button>               
+            	</form>
+            	<?php
+            		}
+            	?>
+				</td>
+				<td>
+					<form id="hola" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>
+            	<ul class="wrapper">
+                <li class="form-row">
+                <label for="id">ID</label>
+                <input type="number" name="id2" id="id" value="<?php echo $_SESSION["id"]; ?>" >
+                </li>
+                <li class="form-row">
+                <label for="nombre">NOMBRE</label>
+                <input type="text" id="nombre" name="nombre2" value="<?php echo $_SESSION["nom"]; ?>">
+                </li>
+                <li class="form-row">
+                <label for="categoria">CATEGORIA</label>
+                <input type="text" id="categoria" name="categoria2" value="<?php echo $_SESSION["cat"]; ?>">
+                </li>
+                <li class="form-row">
+                <label for="descripcion">DESCRIPCION</label>
+                <input type="text" id="descripcion" name="descripcion2" value="<?php echo $_SESSION['descr']; ?>">
+                </li>
+                <li class="form-row">
+                <label for="existencia">EXISTENCIA</label>
+                <input type="number" id="existencia" name="existencia2" value="<?php echo $_SESSION['exis']; ?>">
+                </li>
+                <li class="form-row">
+                <label for="precio">PRECIO</label>
+                <input type="number" id="precio" name="precio2" value="<?php echo $_SESSION['precio']; ?>">
+                </li>
+                <li class="form-row">
+                <label for="imagen">IMAGEN</label>
+                <input type="text" id="imagen" name="imagen2" value="<?php echo $_SESSION['img']; ?>">
+                </li>
+                <li class="form-row">
+                <button type="submit" name="mod">Modificar</button>
+                </li>
+            	</ul>
+            	</form>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+	
     <!-- Rodape -->
     <footer id="rodape">
         <div class="container">
@@ -221,7 +275,7 @@
                             </a>
                         </li>
                         <li class="item-rede-social">
-                            <a href="#" class="btn btn-md btn-custom btn-roxo">Instagram</a>
+                            <a href="provisionalLogin.php" class="btn btn-md btn-custom btn-roxo">Test Login</a>
                             <br>
                         </li>
                         <li class="item-rede-social">
@@ -234,7 +288,7 @@
 
                     <span style="text-align:justify;">
                         <strong style="color: aliceblue"></strong>
-                        |<span>Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
+                        |<span >Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
                     </span>
                 </div>
 
@@ -242,7 +296,9 @@
             </div><!-- /row -->
         </div> <!-- /Container -->
     </footer>
+
+
+
 </body>
 
 </html>
->>>>>>> master

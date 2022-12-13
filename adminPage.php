@@ -189,7 +189,11 @@
     </div>
     
     
-    <?php }else { ?>
+    <?php }else if(isset($_POST["table"]) && $_POST["table"]==3){ 
+        header("Location: Altas.php");
+        exit();
+    
+    }else{ ?>
     
     <br><br><br><br><br><br><br>
     <div>
@@ -207,10 +211,10 @@
                 Mostrar existencias por categoria (conteo).
             </label>
         </div>
-        <input  class="btn btn-md btn-custom btn-roxo" id="botonTabla" type="submit" value="Mostrar tabla">
+        <input  class="btn btn-md btn-custom btn-roxo" id="botonTabla" type="submit" value="Elegir">
     </form>
         </div>
-        
+        <a href="Altas.php" class="btn btn-md btn-custom btn-roxo">Abrir menu Altas</a>
     </div>
     
     <?php    
