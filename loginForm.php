@@ -1,14 +1,16 @@
 <?php 
     session_start();
-    function codigoCaptcha(){
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    function codigoCaptcha($length=5){
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < $length; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
         return $randomString;
-    }
+    }   
+        $captcha = codigoCaptcha();
+        $_SESSION['currentCaptcha'] = $captcha;
 ?>
 <html lang="">
 
@@ -41,11 +43,20 @@
             background-color: #404040;
             color: white;
         }
+        @import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
 
+        svg text {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            stroke-width: 3px;
+            stroke-linejoin: round;
+        }
     </style>
-    </head>
-    <body>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+</head>
+
+<body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -84,10 +95,10 @@
                     <li><a href="Preguntas.php">Preguntas Frecuentes</a></li>
                     <li><a href="tienda/Productos.php">Tienda</a></li>
                     <li class="divisor" role="separator"></li>
-                    
+
                     <li><a href="loginForm.php">Inicio de sesion</a></li>
                     <li><a href="signupForm.php">Registrarse</a></li>
-                    
+
                 </ul>
             </div>
 
@@ -96,19 +107,19 @@
     <!-- /Nav -->
     <?php }?>
 
-   
-   
-   
+
+
+
     <div class="container" style="margin-top:200px; margin-bottom:230px;">
         <div class="vertical-center">
             <form action="login.php" method="post" style="color:white">
-               <input type="hidden" name="login" value="1">
+                <input type="hidden" name="login" value="1">
                 <div class="row g-3 align-items-center">
                     <div class="col-auto">
                         <label for="usuario" class="col-form-label">Usuario</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="usuario" class="form-control textoBG" name="username"  value="<?php if(isset($_COOKIE["username"])){echo $_COOKIE["username"];} ?>">
+                        <input type="text" id="usuario" class="form-control textoBG" name="username" value="<?php if(isset($_COOKIE["username"])){echo $_COOKIE["username"];} ?>">
                     </div>
                 </div>
 
@@ -119,34 +130,72 @@
                         <label for="contra" class="col-form-label">Contraseña</label>
                     </div>
                     <div class="col-auto">
-                        <input name="password" type="password" id="contra" class="form-control textoBG" aria-describedby="passwordHelpInline"  value="<?php if(isset($_COOKIE["password"])){echo $_COOKIE["password"];} ?>">
+                        <input name="password" type="password" id="contra" class="form-control textoBG" aria-describedby="passwordHelpInline" value="<?php if(isset($_COOKIE["password"])){echo $_COOKIE["password"];} ?>">
                     </div>
                 </div>
 
-                
+
 
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
                     <label class="form-check-label" for="exampleCheck1">Recordar usuario y contraseña</label>
                 </div>
-                
+
                 <div class="elem-group" style="margin-top:10px;">
+                    <svg style="margin-top:20px; margin-bottom:-70px" width="200" height="100" viewBox="0 0 700 200" stroke="#000" stroke-width="3">
+                        <defs>
+                            <filter id="textFilter">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="turbulence" data-filterId="5" />
+                                <feDisplacementMap id="distortion" in="SourceGraphic" in2="turbulence" scale="20">
+                                    <!-- 								<animate attributeName="scale" values="40; 60; 40" dur="10s" repeatCount="indefinite"></animate> -->
+                                </feDisplacementMap>
+                            </filter>
+                        </defs>
+                        <text x="10%" y="40%" font-size="150" fill="#3d56ce" stroke="#8999e5" filter="url(#textFilter)">
+                            <?php echo $captcha ;?>
+                        </text>
+                    </svg>
+                    <script>
+                        var tl = new TimelineMax({
+                            repeat: -1,
+                            yoyo: true
+                        });
+
+                        tl.to("#distortion", 1, {
+                                attr: {
+                                    scale: 60
+                                },
+                                ease: Power2.easeOut
+                            })
+                            .to("#distortion", 1, {
+                                attr: {
+                                    scale: 40
+                                },
+                                ease: Power2.easeOut
+                            });
+
+                    </script>
                         <label for="captcha" style="color:white">Por favor ingresa el texto del Captcha:</label>
-                        <label>captcha xd</label>
                         <input type="text" id="captcha" name="captcha_challenge" style="color:black">
                 </div>
 
                 <div class="row g-3 align-items-center">
                     <br><button type="submit" class="btn btn-md btn-custom btn-roxo">Iniciar sesion</button>
                 </div>
+                <p style="color:red;"><?php if(isset($_SESSION['errorCaptcha'])){?>
+                    Error en el catcha.
+                <?php 
+                    unset($_SESSION['errorCaptcha']);
+                    } ?>
+                </p>
                 <p style="color:red;"><?php if(isset($_SESSION['intentos']) && $_SESSION['intentos']>0){?>Contraseña erronea. INTENTOS: <?php  echo $_SESSION['intentos'];}?>.</p>
-                
+
             </form>
         </div>
     </div>
 
-    
-    
+
+
 
     <!-- Rodape -->
     <footer id="rodape">
@@ -202,7 +251,7 @@
 
                     <span style="text-align:justify;">
                         <strong style="color: aliceblue"></strong>
-                        |<span >Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
+                        |<span>Proyecto ficticio para la Universidad Autónoma de Aguascalientes.</span> | &copy; 2022
                     </span>
                 </div>
 

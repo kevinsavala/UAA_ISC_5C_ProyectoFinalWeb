@@ -11,9 +11,13 @@ $mail = getEmail();
 $asunto = $nombreSender . " tiene una duda sobre: " . $razon;
 $mensaje = $nombreSender . " | " . $mailSender . " | ha enviado un mensaje: " . $mensaje;
 
+$numCupon = generateNumber();
+$asuntoSender = "Hemos recibido tu mensaje | Cosas de Tatuaje.";
+$mensajeSender = "Gracias por comunicarte con nosotros! Te responderemos en breve. Por ahora disfruta este cupón en cualquiera de tus compras!: CUPONCONTACTO" . $numCupon;
 
-if ( isset($mail) ) {
+if ( isset($mail) && isset($mailSender)) {
 	mail($mail, $asunto, $mensaje);
+	mail($mailSender, $asuntoSender, $mensajeSender);
     header("Location: index.php");
     exit();
     } else {
@@ -44,5 +48,15 @@ function consult($argumento){
         }
         return $data;
     }
+
+function generateNumber($length=4){
+    $characters = '0123456789';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
 
 ?>

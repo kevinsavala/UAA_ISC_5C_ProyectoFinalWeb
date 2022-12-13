@@ -10,6 +10,7 @@
         return $randomString;
     }
         $captcha = codigoCaptcha();
+                $_SESSION['currentCaptcha'] = $captcha;
 ?>
 <html lang="">
 
@@ -164,8 +165,7 @@
 
                 <div class="elem-group">
 
-                        
-                        <svg style="margin-top:20px; margin-bottom:-70px"width="200" height="100" viewBox="0 0 700 200" stroke="#000" stroke-width="3">
+                    <svg style="margin-top:20px; margin-bottom:-70px"width="200" height="100" viewBox="0 0 700 200" stroke="#000" stroke-width="3">
                         <defs>
                             <filter id="textFilter">
                                 <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="turbulence" data-filterId="5" />
@@ -227,6 +227,10 @@
                 }
 
             </script>
+            <p style="color:red;"><?php if(isset($_SESSION['errorSignup'])){echo "Las contraseñas no coinciden.";
+                                                                           unset($_SESSION['errorSignup']);
+                                                                           }
+                ?></p>
         </div>
     </div>
 

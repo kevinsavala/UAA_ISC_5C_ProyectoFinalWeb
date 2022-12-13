@@ -21,7 +21,7 @@
         //BUSCAR EL USERNAME EN LA BASE DE DATOS
         if(usernameExists($usuario)){
             //USUARIO EXISTE, COMPARAR CONTRASEÑA CHECAR BLOQUEO
-            if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && checkForAdmin($usuario)){
+            if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && checkForAdmin($usuario) && checkCaptcha($_SESSION['currentCaptcha'],$_POST['captcha_challenge'])){
                 $_SESSION['logueado'] = "1";
                 $_SESSION['user'] = $usuario;
                 $_SESSION['nombre'] = getName($usuario);
@@ -29,7 +29,7 @@
                 $_SESSION['intentos']=0;
                 header("Location: adminPage.php");
                 exit();   
-            }else if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && mustChangePw($usuario)){
+            }else if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && mustChangePw($usuario) && checkCaptcha($_SESSION['currentCaptcha'],$_POST['captcha_challenge'])){
                 $_SESSION['logueado'] = "1";
                 $_SESSION['user'] = $usuario;
                 $_SESSION['nombre'] = getName($usuario);
@@ -37,7 +37,7 @@
                 $_SESSION['intentos']=0;
                 header("Location: newPassword.php");
                 exit();   
-            }else if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena)){
+            }else if(!checkForBlock($usuario) && comparePassword($usuario,$contrasena) && checkCaptcha($_SESSION['currentCaptcha'],$_POST['captcha_challenge'])){
                 //INICIAR SESION
                 $_SESSION['logueado'] = "1";
                 $_SESSION['user'] = $usuario;
@@ -48,6 +48,10 @@
                 exit();
             } else if(checkForBlock($usuario)){
                 header("Location: pwRecover.php");
+                exit();
+            } else if(!checkCaptcha($_SESSION['currentCaptcha'],$_POST['captcha_challenge'])){
+                $_SESSION['errorCaptcha'] = 1;
+                header("Location: loginForm.php");
                 exit();
             } else if(!comparePassword($usuario,$contrasena) && $usuario == $_SESSION['lastuser']){
                 if(isset($_SESSION['intentos']) && $_SESSION['intentos'] <2){
@@ -135,6 +139,14 @@ function mustChangePw($user){
 function checkForAdmin($user){
     $data = consult("select admin from usuarios where cuenta='$user';");
     if($data[0][0] == 1){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkCaptcha($cActual, $cIngresado){
+    if($cActual == $cIngresado){
         return true;
     } else {
         return false;

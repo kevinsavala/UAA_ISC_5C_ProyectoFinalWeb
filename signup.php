@@ -2,7 +2,7 @@
     session_start();
     
     //Se tienen name, email, username, password, pwConfirm
-    if(confirmData($_POST['name'],$_POST['email'],$_POST['username'],$_POST['password'],$_POST['pwConfirm'])){
+    if(confirmData($_POST['name'],$_POST['email'],$_POST['username'],$_POST['password'],$_POST['pwConfirm'])  && checkCaptcha($_SESSION['currentCaptcha'],$_POST['captcha_challenge'])){
         //INSERT A LA DB
         insert($_POST['name'],$_POST['email'],$_POST['username'],$_POST['password']);
         header("Location: index.php");
@@ -37,4 +37,12 @@
         }
         return false;
     }
+
+function checkCaptcha($cActual, $cIngresado){
+    if($cActual == $cIngresado){
+        return true;
+    } else {
+        return false;
+    }
+}
 ?>
